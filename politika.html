@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Политика данных HALAQA</title>
+<meta name="description" content="Политика обработки персональных данных HALAQA: какие данные мы получаем, зачем, сколько храним и как их удалить.">
+<meta name="theme-color" content="#FFFFFF">
+<style>
+/* Юридический документ: спокойная читаемая страница в цветах HALAQA, удобная и для печати. */
+:root{
+  --paper:#F7FAF8; --surface:#FFFFFF; --ink:#0F2925; --muted:#3C5550; --line:#D3E3DE;
+  --green:#214A46; --teal:#19BBA3; --teal-ink:#0E7A6B; --teal-tint:#DFF6F1; --gold:#E0B455; --fill:#FFF1B8; --fill-ink:#6B4E00;
+  --body:'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--teal-ink)}
+.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top::before{content:"";display:block;height:4px;background:linear-gradient(90deg,#19BBA3,#5AA9E6 30%,#A28BE8 55%,#E96C56 78%,#FFBD64)}
+.wrap{max-width:820px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--green);text-decoration:none;font-weight:700;letter-spacing:.28em}
+.logo svg{width:40px;height:40px}
+.back{font-size:.9375rem}
+main .wrap{padding-block:36px 64px}
+h1{font-size:clamp(1.6rem,1.3rem + 1.2vw,2.2rem);line-height:1.2;margin:0 0 8px;text-wrap:balance}
+.edition{color:var(--muted);margin:0 0 24px}
+h2{font-size:1.2rem;line-height:1.3;margin:36px 0 12px;padding-top:12px;border-top:2px solid var(--teal-tint);scroll-margin-top:16px}
+h3{font-size:1.02rem;margin:20px 0 8px}
+p{margin:0 0 10px}
+ol,ul{margin:0 0 10px;padding-left:1.4em}
+li{margin-bottom:6px}
+.n{font-weight:600;color:var(--green);font-variant-numeric:tabular-nums}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0}
+.note{background:var(--teal-tint);border:0}
+.toc ol{columns:2;column-gap:28px;padding-left:1.2em;margin:0}
+.toc li{break-inside:avoid;margin-bottom:4px}
+.fill{background:var(--fill);color:var(--fill-ink);padding:0 .3em;border-radius:4px;font-weight:600;white-space:nowrap}
+.table{overflow-x:auto;margin:12px 0 16px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;background:var(--surface);border-radius:12px;overflow:hidden}
+th,td{padding:10px 12px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--teal-tint);font-weight:600}
+.formula{font-weight:600;background:var(--surface);border-left:4px solid var(--gold);padding:10px 14px;margin:10px 0}
+.form{white-space:normal}
+.form p{margin-bottom:8px}
+.line{display:inline-block;min-width:12em;border-bottom:1px solid var(--muted)}
+.req dt{font-weight:600;margin-top:8px}
+.req dd{margin:0}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.875rem}
+footer .wrap{padding-block:20px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+@media (max-width:640px){.toc ol{columns:1}}
+@media print{
+  .top,.back,footer,.toc{display:none}
+  body{background:#fff;font-size:11pt}
+  .card{border-color:#999}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="HALAQA, на главную">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#214A46"/><circle cx="50" cy="50" r="45.5" fill="none" stroke="#E0B455" stroke-width="1.4"/><g transform="translate(15 29.85) scale(.0814) translate(-270 -340)"><path fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" d="M412 798H912Q944 798 964 771L1092 601H1000Q970 601 956 570M820 371V798"/><circle fill="none" stroke="#fff" stroke-width="46" cx="667" cy="734" r="64"/><circle fill="none" stroke="#6FCBB2" stroke-width="46" cx="412" cy="692" r="106"/><g fill="#E0B455"><rect x="350" y="482" width="52" height="52" rx="6" transform="rotate(45 376 508)"/><rect x="419" y="482" width="52" height="52" rx="6" transform="rotate(45 445 508)"/><rect x="607" y="580" width="52" height="52" rx="6" transform="rotate(45 633 606)"/><rect x="675" y="580" width="52" height="52" rx="6" transform="rotate(45 701 606)"/></g></g></svg>
+      HALAQA
+    </a>
+    <a class="back" href="index.html">← На главную</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <h1>Политика обработки персональных данных</h1>
+  <p class="edition">Редакция от 26 октября 2026 года</p>
+
+  <div class="card">
+    <p>Политика объясняет, какие персональные данные получает HALAQA, зачем, как долго их хранит и как вы можете их удалить. Политика разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» (далее — Закон).</p>
+  </div>
+
+  <h2 id="p1">1. Оператор</h2>
+  <p><span class="n">1.1.</span> Оператор персональных данных — Горбунов Евгений Александрович, плательщик налога на профессиональный доход (самозанятый), ИНН <span class="fill">[ИНН — заполнить]</span> (далее — Оператор).</p>
+  <p><span class="n">1.2.</span> Контакты для вопросов о персональных данных: электронная почта <span class="fill">[e-mail — заполнить]</span>, телефон <span class="fill">[телефон — заполнить]</span>, Telegram <a href="https://t.me/halaqa_school">@halaqa_school</a>, адрес для писем <span class="fill">[адрес — заполнить]</span>.</p>
+
+  <h2 id="p2">2. Сайт</h2>
+  <p><span class="n">2.1.</span> На сайте <a href="https://halaqa.ru">halaqa.ru</a> нет форм для ввода данных, счётчиков посещаемости и рекламных систем, сайт не использует файлы cookie для аналитики.</p>
+  <p><span class="n">2.2.</span> Хостинг-провайдер сайта может вести технические журналы обращений к сайту (IP-адрес, время запроса, тип браузера) для его работы и защиты. Оператор не использует эти журналы, чтобы установить личность посетителей.</p>
+  <p><span class="n">2.3.</span> Кнопки «Записаться» и «Канал HALAQA» ведут в Telegram. Данные, которые вы сообщаете в переписке, обрабатываются по правилам этой Политики.</p>
+
+  <h2 id="p3">3. Какие данные мы получаем и зачем</h2>
+  <div class="table">
+    <table>
+      <thead><tr><th scope="col">Чьи данные</th><th scope="col">Какие данные</th><th scope="col">Зачем</th></tr></thead>
+      <tbody>
+        <tr><td>Человек, который написал нам с вопросом</td><td>имя, контакт в мессенджере или номер телефона, текст обращения</td><td>ответить на вопрос, рассказать об услугах, записать на занятие</td></tr>
+        <tr><td>Заказчик (родитель или законный представитель)</td><td>фамилия, имя (при необходимости отчество), номер телефона или аккаунт в мессенджере, адрес электронной почты</td><td>заключить и исполнить договор, держать связь, направить чек, вернуть деньги</td></tr>
+        <tr><td>Ребёнок</td><td>имя, возраст, город или часовой пояс, уровень подготовки; изображение и голос в записях занятий</td><td>подобрать группу и расписание, проводить занятия, давать обратную связь родителю</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><span class="n">3.1.</span> Мы не запрашиваем паспортные данные, адрес проживания, данные банковских карт и сведения о здоровье. Оплата проходит в платёжном сервисе Robokassa, данные карты Оператор не получает.</p>
+  <p><span class="n">3.2.</span> Занятия могут записываться для внутреннего использования: чтобы следить за качеством и готовиться к урокам. Записи не публикуются и не передаются посторонним. Опубликовать запись или использовать её в рекламе мы можем только с отдельного согласия родителя.</p>
+
+  <h2 id="p4">4. Правовые основания</h2>
+  <p><span class="n">4.1.</span> Данные обрабатываются для заключения по инициативе субъекта персональных данных и исполнения договора, стороной или выгодоприобретателем по которому он является (пункт 5 части 1 статьи 6 Закона), — это договор на оказание информационно-консультационных услуг, размещённый в <a href="oferta.html">публичной оферте</a>.</p>
+  <p><span class="n">4.2.</span> Запись занятий для внутреннего использования — часть услуг по договору (статья 152.1 ГК РФ). Публикация записей возможна только с отдельного согласия родителя.</p>
+
+  <h2 id="p5">5. Как мы обрабатываем данные</h2>
+  <p><span class="n">5.1.</span> Оператор совершает с данными только действия, необходимые для целей раздела 3: сбор, запись, систематизацию, хранение, уточнение, использование, передачу (предоставление, доступ), удаление и уничтожение — с использованием средств автоматизации и без них.</p>
+  <p><span class="n">5.2.</span> Запись, систематизация, накопление и хранение персональных данных граждан Российской Федерации ведутся с использованием баз данных, находящихся на территории Российской Федерации.</p>
+  <p><span class="n">5.3.</span> Данные получают только те, кому они нужны для оказания услуг:</p>
+  <ul>
+    <li>лица, привлечённые Оператором к оказанию услуг, — имя, возраст и уровень подготовки ребёнка, чтобы проводить занятия;</li>
+    <li>платёжный сервис Robokassa — данные, необходимые для оплаты, направления чека и возврата денег.</li>
+  </ul>
+  <p>Иным лицам данные передаются только в случаях, предусмотренных законом. Мы не продаём данные и не используем их для рекламы третьих лиц.</p>
+  <p><span class="n">5.4.</span> Переписка ведётся в том мессенджере, который вы выбрали для связи (Telegram, WhatsApp), или по электронной почте.</p>
+
+  <h2 id="p6">6. Сроки хранения</h2>
+  <ul>
+    <li>обращения, после которых договор не заключён, — не более 3 (трёх) месяцев с даты последнего сообщения;</li>
+    <li>данные Заказчика и Ученика — в течение срока действия договора и 3 (трёх) лет после его исполнения или прекращения;</li>
+    <li>записи занятий — не дольше, чем они нужны для контроля качества и подготовки к урокам;</li>
+    <li>фото-, аудио- и видеоматериалы, опубликованные с отдельного согласия родителя, — до отзыва согласия или до истечения срока, указанного в согласии.</li>
+  </ul>
+  <p>После истечения срока данные удаляются или уничтожаются.</p>
+
+  <h2 id="p7">7. Как мы защищаем данные</h2>
+  <ul>
+    <li>доступ к данным есть только у Оператора и привлечённых им лиц в объёме, нужном для работы;</li>
+    <li>аккаунты, в которых хранятся данные, защищены паролями и двухэтапной проверкой входа;</li>
+    <li>ссылки на занятия и групповой чат учеников не публикуются в открытом доступе;</li>
+    <li>данные, срок хранения которых истёк, уничтожаются.</li>
+  </ul>
+
+  <h2 id="p8">8. Ваши права</h2>
+  <p><span class="n">8.1.</span> Вы вправе получить сведения о том, какие ваши данные и данные вашего ребёнка мы обрабатываем, потребовать их уточнения, блокирования или уничтожения, если они неполные, устаревшие, неточные или больше не нужны для заявленных целей, а также отозвать согласие, если обработка основана на согласии.</p>
+  <p><span class="n">8.2.</span> Чтобы воспользоваться правами, напишите Оператору по контактам из пункта 1.2. Мы ответим в течение 10 (десяти) рабочих дней со дня получения запроса. В случаях, предусмотренных Законом, этот срок может быть продлён не более чем на 5 (пять) рабочих дней с объяснением причин.</p>
+  <p><span class="n">8.3.</span> Если вы считаете, что ваши права нарушены, вы можете обратиться в Роскомнадзор или в суд.</p>
+
+  <h2 id="p9">9. Изменение Политики</h2>
+  <p><span class="n">9.1.</span> Оператор может изменять Политику. Новая редакция публикуется на этой странице с указанием даты и действует с момента публикации.</p>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 HALAQA · <a href="oferta.html">Договор-оферта</a> · <a href="index.html">На главную</a></div>
+</footer>
+</body>
+</html>

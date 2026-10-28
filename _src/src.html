@@ -1,0 +1,1079 @@
+<title>HALAQA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Онлайн-уроки для детей 7–15 лет: истории пророков, основы Ислама, адаб и таджвид по методике «Муаллим сани». Уроки в формате диалога, группы до 12 человек, учиться можно из любой точки мира.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="HALAQA — онлайн-уроки для детей 7–15 лет">
+<meta property="og:description" content="Живой диалог, полезные знания. Истории пророков, основы Ислама, адаб и таджвид. Устазы с образованием Кувейта и Сирии, группы до 12 человек.">
+<link rel="canonical" href="https://halaqa.ru/">
+<meta property="og:url" content="https://halaqa.ru/">
+<meta property="og:image" content="https://halaqa.ru/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='190 190 1020 1020'%3E%3Ccircle cx='700' cy='700' r='510' fill='%23214A46'/%3E%3Cg transform='translate(0 112)'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-width='44' stroke-linecap='round' stroke-linejoin='round' d='M412 798H912Q944 798 964 771L1092 601H1000Q970 601 956 570M820 371V798'/%3E%3Ccircle fill='none' stroke='%23FFFFFF' stroke-width='44' stroke-linecap='round' stroke-linejoin='round' cx='667' cy='734' r='64'/%3E%3Ccircle fill='none' stroke='%236FCBB2' stroke-width='44' cx='412' cy='692' r='106'/%3E%3Cg fill='%23E0B455'%3E%3Crect x='354' y='486' width='44' height='44' rx='5' transform='rotate(45 376 508)'/%3E%3Crect x='423' y='486' width='44' height='44' rx='5' transform='rotate(45 445 508)'/%3E%3Crect x='611' y='584' width='44' height='44' rx='5' transform='rotate(45 633 606)'/%3E%3Crect x='679' y='584' width='44' height='44' rx='5' transform='rotate(45 701 606)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Nunito';font-weight:700;font-display:swap;src:url(FONT:nunito700) format('woff2')}
+@font-face{font-family:'Nunito';font-weight:800;font-display:swap;src:url(FONT:nunito800) format('woff2')}
+@font-face{font-family:'Golos Text';font-weight:400;font-display:swap;src:url(FONT:golos400) format('woff2')}
+@font-face{font-family:'Golos Text';font-weight:600;font-display:swap;src:url(FONT:golos600) format('woff2')}
+@font-face{font-family:'Amiri';font-weight:700;font-display:swap;src:url(FONT:amiri700) format('woff2')}
+
+/* Концепция «круг» в фирменном стиле слайдов HALAQA: светлая страница, белые карточки с цветными рамками,
+   тёмно-зелёные карточки с золотой арабской каллиграфией, три цветные чёрточки. Главные цвета — зелёный,
+   бирюзовый, мятный и золотой; коралловый, небесный и сиреневый — в деталях. Текст всегда на спокойном фоне. */
+:root{
+  --paper:#F7FAF8; --surface:#FFFFFF; --wash:#E8F6F1; --ink:#0F2925; --muted:#3C5550; --line:#D3E3DE;
+  --green:#214A46; --green-deep:#183A36; --green-tint:#E3EDEA; --on-green:#FFFFFF;
+  --forest:#0E4434; --forest-deep:#092F22; --on-forest:#FFFFFF; --on-forest-muted:#BFE3D9;
+  --teal:#19BBA3; --teal-ink:#0E7A6B; --teal-tint:#DFF6F1;
+  --mint:#6FCBB2; --mint-ink:#16705D; --mint-tint:#E2F5EF;
+  --gold:#E0B455; --gold-bright:#F3DA70; --sun:#FFBD64; --gold-light:#F3D990; --gold-ink:#7E5A0E; --gold-tint:#FBF3DC; --on-gold:#173A36;
+  --coral:#E96C56; --coral-ink:#A43F2A; --coral-tint:#FDE8E2;
+  --sky:#5AA9E6; --sky-ink:#1E639C; --sky-tint:#E4F1FC;
+  --lilac:#A28BE8; --lilac-ink:#5E44B8; --lilac-tint:#EFEAFD;
+  --tl-green:#2FAE68; --tl-green-ink:#1D7546; --tl-green-tint:#E2F5E9;
+  --tl-yellow:#F2B32B; --tl-yellow-ink:#875B00; --tl-yellow-tint:#FDF3DA;
+  --tl-red:#E5533D; --tl-red-ink:#A8321F; --tl-red-tint:#FCE6E2;
+  --pattern:#CFE8DF;
+  --shadow:color-mix(in srgb,var(--green) 38%,transparent);
+  --grad-text:linear-gradient(100deg,var(--green) 10%,var(--teal-ink) 90%);
+  --grad-gold:linear-gradient(120deg,var(--gold) 0%,var(--sun) 100%);
+  --grad-joy:linear-gradient(90deg,var(--teal),var(--sky) 30%,var(--lilac) 55%,var(--coral) 78%,var(--sun));
+  --grad-joy-ink:linear-gradient(90deg,var(--teal-ink) 0%,var(--sky-ink) 40%,var(--lilac-ink) 70%,var(--coral-ink) 100%);
+  --display:'Nunito','Golos Text',system-ui,sans-serif;
+  --body:'Golos Text','Amiri',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --arabic:'Amiri','Noto Naskh Arabic','Geeza Pro',serif;
+  --fs-sm:.9375rem; --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-h3:1.3rem;
+  --fs-h2:clamp(1.9rem,1.4rem + 2vw,2.8rem); --fs-h1:clamp(2.3rem,1.4rem + 3.6vw,3.8rem);
+  --radius:22px; --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--fs-body)/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h3{font-weight:700;letter-spacing:0}
+p,ul,ol,figure{margin:0}
+a{color:inherit}
+svg{display:block}
+img,svg{max-width:100%}
+.nw{white-space:nowrap}
+.ar{font-family:var(--arabic);font-weight:700}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.mk-line{fill:none;stroke:var(--green);stroke-width:38;stroke-linecap:round;stroke-linejoin:round}
+.mk-ring{fill:none;stroke:var(--mint);stroke-width:38}
+.mk-dot{fill:var(--gold)}
+.bd-bg{fill:var(--green)}
+.bd-ring{fill:none;stroke:var(--gold);stroke-width:1.4}
+.bd-line{fill:none;stroke:#FFFFFF;stroke-width:46;stroke-linecap:round;stroke-linejoin:round}
+.bd-mint{fill:none;stroke:var(--mint);stroke-width:46}
+.grad{background:var(--grad-joy-ink);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hl{padding:0 .12em;border-radius:6px;background:linear-gradient(transparent 58%,var(--hl) 58%)}
+.hl-teal{--hl:color-mix(in srgb,var(--teal) 34%,transparent)}
+.hl-coral{--hl:color-mix(in srgb,var(--coral) 32%,transparent)}
+.hl-sky{--hl:color-mix(in srgb,var(--sky) 32%,transparent)}
+.hl-lilac{--hl:color-mix(in srgb,var(--lilac) 34%,transparent)}
+.hl-gold{--hl:color-mix(in srgb,var(--gold) 42%,transparent)}
+
+.wrap{position:relative;z-index:1;max-width:1160px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* фирменные элементы слайдов */
+.dashes{display:flex;gap:8px}
+.dashes i{display:block;height:6px;border-radius:3px;transform-origin:left;animation:grow .8s var(--ease) backwards}
+.dashes i:nth-child(1){width:64px;background:var(--teal);animation-delay:.35s}
+.dashes i:nth-child(2){width:36px;background:var(--sun);animation-delay:.47s}
+.dashes i:nth-child(3){width:16px;background:var(--coral);animation-delay:.59s}
+@keyframes grow{from{transform:scaleX(0)}}
+.dark-card{position:relative;overflow:hidden;color:var(--on-forest);background:radial-gradient(70% 60% at 85% 0%,color-mix(in srgb,var(--teal) 30%,transparent),transparent 70%),linear-gradient(160deg,var(--forest) 0%,var(--forest-deep) 100%);border:2px solid var(--teal);border-radius:var(--radius);box-shadow:0 22px 44px -28px var(--forest-deep)}
+.dark-card p{color:var(--on-forest-muted)}
+.eyebrow-dark{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright)!important}
+
+/* цветные фигурки: звёздочки, кольца, ромбики, волны */
+.deco{position:absolute;z-index:0;width:var(--s,24px);height:var(--s,24px);color:var(--c);fill:currentColor;pointer-events:none;animation:bob var(--d,6s) ease-in-out var(--dl,0s) infinite}
+.deco.squig{width:calc(var(--s,24px) * 3)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(14deg)}}
+.has-deco{position:relative;overflow:hidden}
+@media (max-width:700px){.deco.hide-sm{display:none}}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding-inline:26px;border-radius:999px;font:800 1.0625rem/1.1 var(--display);text-decoration:none;text-align:center;transition:background-position .6s var(--ease),border-color .2s,background-color .2s,box-shadow .25s,transform .25s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:linear-gradient(120deg,var(--green) 0%,var(--teal-ink) 50%,var(--green) 100%) 0 0/200% 100%;color:var(--on-green);box-shadow:0 10px 22px -14px var(--shadow)}
+.btn-primary:hover{background-position:100% 0;box-shadow:0 16px 30px -16px var(--shadow)}
+.btn-ghost{border:2px solid var(--green);color:var(--green);background:var(--surface)}
+.btn-ghost:hover{background:var(--mint-tint)}
+.btn-gold{background:linear-gradient(120deg,var(--gold-bright) 0%,var(--sun) 50%,var(--gold-bright) 100%) 0 0/200% 100%;color:var(--forest-deep)}
+.btn-gold:hover{background-position:100% 0}
+.btn-ghost-light{border:2px solid var(--on-forest-muted);color:var(--on-forest)}
+.btn-ghost-light:hover{border-color:var(--on-forest)}
+.btn-soon{border:2px dashed var(--line);color:var(--muted);background:var(--surface);cursor:default}
+.btn-soon:hover{transform:none}
+.btn-sm{min-height:42px;padding-inline:20px;font-size:1rem}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translate(2px,-2px)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* шапка */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 90%,transparent);-webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.top::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--grad-joy)}
+.top.scrolled{box-shadow:0 8px 28px -18px var(--shadow)}
+.top .wrap{display:flex;align-items:center;gap:28px;min-height:72px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--green);text-decoration:none}
+.logo .badge{width:48px;height:48px;flex:none;transition:transform .6s var(--ease)}
+.logo:hover .badge{transform:rotate(-14deg) scale(1.06)}
+.logo-text{display:grid;gap:4px}
+.logo-name{font:800 1.1rem/1 var(--display);letter-spacing:.3em}
+.logo-sub{font-size:.6875rem;line-height:1;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.nav{display:flex;gap:22px;margin-left:auto;font-size:var(--fs-sm)}
+.nav a{position:relative;text-decoration:none;color:var(--muted);font-weight:600;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:2px;background:var(--grad-joy);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav a:hover{color:var(--green)}
+.nav a:hover::after{transform:scaleX(1)}
+@media (max-width:1080px){.nav{display:none}.top .btn{margin-left:auto}}
+@media (max-width:520px){.logo-sub{display:none}.logo .badge{width:42px;height:42px}}
+
+/* первый экран */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(38% 50% at 86% 16%,color-mix(in srgb,var(--teal) 26%,transparent),transparent 70%),
+  radial-gradient(30% 40% at 62% 96%,color-mix(in srgb,var(--sky) 20%,transparent),transparent 70%),
+  radial-gradient(34% 48% at 0% 100%,color-mix(in srgb,var(--sun) 26%,transparent),transparent 70%),
+  radial-gradient(28% 36% at 40% 0%,color-mix(in srgb,var(--coral) 12%,transparent),transparent 70%),
+  linear-gradient(180deg,var(--surface) 0%,var(--wash) 100%)}
+.hero::before{content:"";position:absolute;width:620px;height:620px;right:-180px;top:-220px;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,color-mix(in srgb,var(--mint) 30%,transparent),transparent);animation:float 16s ease-in-out infinite alternate}
+@keyframes float{to{transform:translate(-70px,50px) scale(1.12)}}
+.pattern{position:absolute;top:0;left:0;width:calc(100% + 56px);max-width:none;height:100%;color:var(--pattern);--mx:78%;--my:44%;-webkit-mask-image:radial-gradient(circle at var(--mx) var(--my),#000 0,transparent 30%);mask-image:radial-gradient(circle at var(--mx) var(--my),#000 0,transparent 30%);animation:drift 40s linear infinite}
+@keyframes drift{to{transform:translateX(-56px)}}
+.wave{position:absolute;left:0;bottom:-1px;width:100%;height:46px;max-width:none;fill:var(--surface);z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px 56px;align-items:center;padding-block:52px 84px}
+.hero-text{min-width:0;display:grid;gap:18px;justify-items:start}
+.hero-text > *{animation:rise .8s var(--ease) backwards}
+.hero-text .tagline{animation-delay:.05s}
+.hero-text h1{animation-delay:.15s}
+.hero-text .lead{animation-delay:.3s}
+.hero-text .chip{animation-delay:.4s}
+.hero-text .actions{animation-delay:.5s}
+.hero-text .reply-note{animation-delay:.6s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}}
+.tagline{font-size:.8125rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.hero h1{font-size:var(--fs-h1)}
+.hero .lead{font-size:var(--fs-lead);line-height:1.55;color:var(--muted);max-width:34em}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:999px;background:var(--surface);border:2px solid var(--coral);font-size:var(--fs-sm);line-height:1.35;color:var(--ink);box-shadow:0 8px 20px -14px var(--coral)}
+.chip::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--coral);flex:none;animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.5);opacity:.65}}
+.chip b{color:var(--coral-ink);font-weight:600}
+.reply-note{font-size:var(--fs-sm);color:var(--muted)}
+.reply-note a{color:var(--green)}
+
+.circle{position:relative;display:grid;gap:18px;justify-items:center}
+.circle svg.ring-art{position:relative;z-index:1;width:100%;max-width:400px;height:auto;overflow:visible}
+.circle .ring{fill:none;stroke:var(--muted);stroke-opacity:.4;stroke-width:1.5;stroke-dasharray:1 9;stroke-linecap:round;transform-box:view-box;transform-origin:200px 200px;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.circle .ring-outer{fill:none;stroke:var(--gold);stroke-width:2}
+.circle .disc{fill:var(--surface);opacity:.88}
+.circle .pupil{fill:var(--c)}
+.circle figcaption{position:relative;z-index:1;font-size:var(--fs-sm);line-height:1.5;color:var(--ink);max-width:26em;text-align:center;padding:12px 18px;background:var(--surface);border:2px solid var(--teal);border-radius:16px;box-shadow:0 12px 28px -22px var(--shadow);animation:rise .8s var(--ease) 2.6s backwards}
+.circle figcaption b{color:var(--green);font-weight:600}
+/* знак прописывается: каждый штрих рисуется по очереди */
+.draw{stroke-dasharray:1 2;stroke-dashoffset:1.05;animation:write var(--dur) cubic-bezier(.65,0,.35,1) var(--at) forwards}
+@keyframes write{to{stroke-dashoffset:0}}
+.pop,.pupil{transform-box:fill-box;transform-origin:center;animation:sit .55s cubic-bezier(.3,1.5,.5,1) var(--at) backwards}
+@keyframes sit{from{opacity:0;transform:scale(.2)}}
+
+.facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.fact{position:relative;overflow:hidden;min-width:0;padding:20px 18px 18px;background:linear-gradient(165deg,var(--t) 0%,var(--surface) 75%);border:2px solid var(--c);border-radius:18px;box-shadow:0 12px 30px -24px var(--c);animation:rise .8s var(--ease) backwards}
+.fact:nth-child(1){animation-delay:.6s}
+.fact:nth-child(2){animation-delay:.7s}
+.fact:nth-child(3){animation-delay:.8s}
+.fact:nth-child(4){animation-delay:.9s}
+.fact b{display:block;font:800 2.6rem/1 var(--display);color:var(--ci);font-variant-numeric:tabular-nums lining-nums}
+.fact b small{font-size:.5em;margin-right:.15em}
+.fact span{display:block;margin-top:8px;font-size:var(--fs-sm);line-height:1.4;color:var(--muted)}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);padding-block:40px 76px}
+  .pattern{--mx:50%;--my:58%}
+  .circle svg.ring-art{max-width:310px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* открытый урок / этап набора */
+.lesson{background:var(--surface);border-bottom:1px solid var(--line)}
+.lesson .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding-block:24px 30px}
+.cal{flex:none;width:100px;border:2px solid var(--coral);border-radius:16px;overflow:hidden;text-align:center;background:var(--surface);box-shadow:0 12px 26px -18px var(--coral);transform:rotate(-3deg)}
+.cal-m{display:block;background:linear-gradient(120deg,var(--coral),var(--sun));color:var(--forest-deep);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 0 5px}
+.cal-d{display:block;font:800 2.6rem/1 var(--display);color:var(--ink);padding-top:10px;font-variant-numeric:lining-nums}
+.cal-w{display:block;font-size:.75rem;color:var(--muted);padding:2px 0 9px}
+.lesson-text{flex:1 1 360px;min-width:0}
+.lesson-text h2{font-size:1.65rem}
+.lesson-text p{margin-top:6px;color:var(--muted);max-width:44em}
+
+/* разделы */
+.section{padding-block:clamp(56px,8vw,104px);scroll-margin-top:72px}
+.eyebrow{display:inline-flex;justify-self:start;align-self:start;padding:6px 14px;border-radius:999px;background:var(--e-bg,var(--gold-tint));color:var(--e-ink,var(--gold-ink));font-size:.8125rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.head{display:grid;gap:14px;margin-bottom:44px;max-width:46em}
+.head h2{font-size:var(--fs-h2)}
+.head p{font-size:1.125rem;color:var(--muted)}
+.sub-h{font-size:var(--fs-h3);margin-bottom:16px}
+.bg-mint{background:radial-gradient(40% 60% at 100% 0%,color-mix(in srgb,var(--sky) 16%,transparent),transparent 70%),linear-gradient(180deg,var(--paper) 0%,var(--mint-tint) 100%)}
+.bg-warm{background:radial-gradient(45% 50% at 0% 0%,color-mix(in srgb,var(--sun) 24%,transparent),transparent 70%),linear-gradient(180deg,var(--paper) 0%,var(--coral-tint) 100%)}
+.bg-sky{background:radial-gradient(40% 60% at 100% 100%,color-mix(in srgb,var(--lilac) 18%,transparent),transparent 70%),linear-gradient(180deg,var(--paper) 0%,var(--sky-tint) 100%)}
+.bg-lilac{background:radial-gradient(40% 60% at 0% 100%,color-mix(in srgb,var(--teal) 18%,transparent),transparent 70%),linear-gradient(180deg,var(--paper) 0%,var(--lilac-tint) 100%)}
+
+/* карточки с цветной иконкой */
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{position:relative;display:grid;gap:12px;align-content:start;min-width:0;padding:28px;border-radius:var(--radius);border:2px solid var(--b);background:linear-gradient(160deg,var(--t) 0%,var(--surface) 72%);box-shadow:0 14px 30px -26px var(--b);transition:transform .35s var(--ease),box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--b)}
+.ico{flex:none;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--c),var(--c2));box-shadow:0 12px 24px -14px var(--c2);transition:transform .5s var(--ease)}
+.card:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.ico svg{width:28px;height:28px;fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico svg.filled{fill:#FFFFFF;stroke:none}
+.ico.sm{width:44px;height:44px;border-radius:14px}
+.ico.sm svg{width:22px;height:22px}
+.card h3{font-size:var(--fs-h3)}
+.card p{color:var(--muted)}
+
+/* урок по минутам */
+.tl-bar{display:flex;gap:4px;height:26px}
+.tl-bar span{flex:var(--m) 1 0;min-width:0;display:grid;place-items:center;border-radius:7px;background:var(--c);font:800 .8125rem/1 var(--display);color:#FFFFFF;transform-origin:left;transition:transform .7s var(--ease) calc(var(--i) * 110ms)}
+.tl-bar.pre span{transform:scaleX(0)}
+.tl-legend{display:flex;flex-wrap:wrap;gap:8px 16px;list-style:none;padding:0;margin-top:14px;font-size:.9375rem;color:var(--muted)}
+.tl-legend li{display:flex;align-items:center;gap:7px}
+.tl-legend li::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--c)}
+.tl-legend b{color:var(--ink);font-weight:600}
+.lcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
+.lcard{display:grid;gap:12px;align-content:start;padding:26px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(165deg,var(--t) 0%,var(--surface) 60%);box-shadow:0 14px 30px -26px var(--b);min-width:0;transition:transform .35s var(--ease),box-shadow .35s}
+.lcard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--b)}
+.lc-top{display:flex;align-items:center;gap:14px}
+.lcard .ico{width:54px;height:54px;border-radius:50%}
+.jump{animation:jump 1.6s ease-in-out infinite}
+@keyframes jump{50%{transform:translateY(-4px)}}
+.when{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ci)}
+.lcard h3{font-size:var(--fs-h3)}
+.lcard > p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0}
+.tags li{padding:4px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.8125rem;color:var(--ink)}
+.lights{display:grid;gap:6px;list-style:none;padding:0;font-size:.9375rem}
+.lights li{display:flex;align-items:center;gap:10px}
+.lights li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent);animation:lamp 4.5s ease-in-out var(--dl,0s) infinite}
+@keyframes lamp{0%,100%{opacity:.5}15%,30%{opacity:1}}
+@media (max-width:900px){.lcards{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.tl-bar span{font-size:0}}
+
+/* устазы: три карточки, биография раскрывается по кнопке «Подробнее» */
+.teachers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;padding:0;align-items:start}
+.teacher{position:relative;display:grid;gap:18px;align-content:start;padding:28px 22px 22px;background:linear-gradient(165deg,var(--t) 0%,var(--surface) 55%);border:2px solid var(--c);border-radius:var(--radius);min-width:0;box-shadow:0 14px 30px -26px var(--c);transition:transform .35s var(--ease),box-shadow .35s}
+.teacher:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--c)}
+.t-side{display:grid;gap:18px;align-content:start;min-width:0}
+.t-head{display:flex;align-items:center;gap:16px}
+.mono{position:relative;flex:none;width:72px;height:72px;display:grid;place-items:center}
+.mono svg{position:absolute;inset:0;width:72px;height:72px;fill:var(--surface);stroke:var(--ci);stroke-width:2;transition:transform .7s var(--ease)}
+.teacher:hover .mono svg{transform:rotate(90deg)}
+.mono span{position:relative;font:800 1.7rem/1 var(--display);color:var(--ci)}
+.teacher h3{font-size:1.35rem}
+.t-role{margin-top:4px;font-size:.875rem;color:var(--muted)}
+.t-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.t-stat{padding:12px;border-radius:14px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.t-stat b{display:block;white-space:nowrap;font:800 1.45rem/1.05 var(--display);color:var(--ci);font-variant-numeric:lining-nums}
+.t-stat span{display:block;margin-top:4px;font-size:.8125rem;line-height:1.35;color:var(--muted)}
+.more summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;padding:9px 16px;border-radius:999px;border:2px solid var(--c);color:var(--ci);font:800 .9375rem/1 var(--display);background:var(--surface);transition:background-color .2s}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"";width:8px;height:8px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}
+.more[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.more summary:hover{background:var(--t)}
+.more .less{display:none}
+.more[open] .less{display:inline}
+.more[open] .open-label{display:none}
+.more[open] > .bio{animation:unfold .4s var(--ease)}
+.bio{display:grid;gap:16px;margin-top:16px}
+.bio div{display:grid;gap:7px;align-content:start}
+.bio dt{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ci)}
+.bio dd{position:relative;margin:0;padding-left:16px;font-size:.9375rem;color:var(--ink);line-height:1.5}
+.bio dd::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--c);transform:rotate(45deg)}
+.bio dd b{font-weight:600;color:var(--ci);font-variant-numeric:tabular-nums}
+@media (max-width:960px){.teachers{grid-template-columns:minmax(0,1fr)}}
+
+/* программа */
+.week{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.week li{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:24px 18px 22px;background:linear-gradient(170deg,var(--t) 0%,var(--surface) 65%);border:2px solid var(--c);border-radius:18px;min-width:0;transition:transform .3s var(--ease),box-shadow .3s}
+.week li:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px var(--c)}
+.day-row{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}
+.day{padding:3px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--c);color:var(--ci);font-size:.8125rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.topics{font-size:.75rem;font-weight:600;color:var(--ci)}
+.subj{font:800 1.25rem/1.15 var(--display)}
+.week p{font-size:.9375rem;line-height:1.5;color:var(--muted)}
+.months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.month{display:grid;gap:12px;align-content:start;padding:24px 22px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(170deg,var(--t) 0%,var(--surface) 55%);min-width:0}
+.month-tag{justify-self:start;padding:4px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--b);color:var(--ci);font-size:.8125rem;font-weight:600}
+.month h3{font-size:1.2rem}
+.month ul{list-style:none;padding:0;display:grid;gap:8px;font-size:.9375rem}
+.month li{position:relative;padding-left:16px;color:var(--muted)}
+.month li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--b)}
+.month li b{color:var(--ink);font-weight:600}
+.levels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.level{display:grid;gap:8px;align-content:start;border:2px solid var(--b);border-radius:var(--radius);padding:22px;background:linear-gradient(150deg,var(--t),var(--surface) 70%);min-width:0}
+.level b{font:800 1.2rem/1.2 var(--display);color:var(--ci)}
+.level p{color:var(--muted)}
+.ar-row{font:700 1.7rem/1.7 var(--arabic);color:var(--ci);letter-spacing:.2em;word-spacing:.15em}
+.block-gap{margin-top:56px}
+.prog-note{margin-top:16px;color:var(--muted)}
+@media (max-width:900px){
+  .cards3,.months{grid-template-columns:minmax(0,1fr);gap:20px}
+  .week{grid-template-columns:minmax(0,1fr);gap:10px}
+  .levels{grid-template-columns:minmax(0,1fr)}
+}
+
+/* группы по возрасту */
+.groups{background:
+  radial-gradient(40% 80% at 100% 30%,color-mix(in srgb,var(--sky) 18%,transparent),transparent 75%),
+  radial-gradient(35% 70% at 0% 100%,color-mix(in srgb,var(--sun) 22%,transparent),transparent 75%),
+  linear-gradient(120deg,var(--wash) 0%,var(--surface) 100%)}
+.groups .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 56px;padding-block:60px;align-items:center}
+.groups h2{font-size:clamp(1.7rem,1.25rem + 1.6vw,2.4rem)}
+.groups-text{display:grid;gap:14px}
+.groups-text p:last-child{font-size:1.125rem;color:var(--muted);max-width:32em}
+.ages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.age{display:grid;gap:2px;align-content:start;padding:26px 22px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(150deg,var(--t) 0%,var(--t2) 100%);min-width:0;transition:transform .35s var(--ease),box-shadow .35s}
+.age:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:0 22px 44px -28px var(--shadow)}
+.age b{font:800 clamp(2.6rem,2rem + 2vw,3.5rem)/1 var(--display);background:linear-gradient(100deg,var(--ci),var(--ci2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--ci);font-variant-numeric:lining-nums;white-space:nowrap}
+.age-u{font-size:var(--fs-sm);color:var(--muted)}
+.age-name{margin-top:12px;font:800 1.15rem/1.2 var(--display);color:var(--ink)}
+.age-levels{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.age-levels span{padding:3px 10px;border-radius:999px;background:var(--surface);font-size:.8125rem;color:var(--muted);border:1px solid var(--line)}
+@media (max-width:760px){.groups .wrap{grid-template-columns:minmax(0,1fr)}.age{padding:22px 16px}}
+
+/* цены */
+.prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:880px}
+.price{position:relative;display:flex;flex-direction:column;gap:12px;padding:32px;background:var(--surface);border:2px solid var(--teal);border-radius:var(--radius);min-width:0;transition:transform .35s var(--ease),box-shadow .35s}
+.price:hover{transform:translateY(-4px);box-shadow:0 22px 44px -28px var(--shadow)}
+.price:not(.best){background:linear-gradient(165deg,var(--teal-tint) 0%,var(--surface) 60%)}
+.price.best{border:3px solid transparent;background:radial-gradient(70% 60% at 100% 0%,color-mix(in srgb,var(--sun) 20%,transparent),transparent 70%) padding-box,linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--green),var(--teal) 55%,var(--sun)) border-box}
+.badge-best{position:absolute;top:-15px;left:30px;background:var(--grad-gold);color:var(--on-gold);font-size:.8125rem;font-weight:600;padding:5px 14px;border-radius:999px;box-shadow:0 8px 18px -10px var(--gold)}
+.price h3{font-size:var(--fs-h3)}
+.price .amount{color:var(--ink);font:800 clamp(2.4rem,2rem + 1.5vw,3.1rem)/1 var(--display);font-variant-numeric:tabular-nums lining-nums}
+.amount small{font:400 1rem var(--body);color:var(--muted);margin-left:4px}
+.old{color:var(--muted);text-decoration:line-through}
+.price p{color:var(--muted)}
+.price .per{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted);font-variant-numeric:tabular-nums}
+.per b{color:var(--ink);font-weight:600}
+.price-note{margin-top:28px;max-width:46em;color:var(--muted)}
+@media (max-width:700px){.prices{grid-template-columns:minmax(0,1fr);gap:32px}.price{padding:28px 22px}}
+
+/* запись */
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:step}
+.steps li{position:relative;display:grid;gap:8px;align-content:start;padding:24px 22px 26px;background:var(--surface);border:2px solid var(--b);border-radius:var(--radius);counter-increment:step;min-width:0;box-shadow:0 14px 30px -26px var(--b);transition:transform .35s var(--ease),box-shadow .35s}
+.steps li:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--b)}
+.steps li::before{content:counter(step);width:48px;height:48px;margin-bottom:6px;display:grid;place-items:center;border-radius:50%;background:var(--g);font:800 1.3rem/1 var(--display);color:#FFFFFF;box-shadow:0 10px 20px -12px var(--shadow);transition:transform .4s var(--ease)}
+.steps li:hover::before{transform:scale(1.1) rotate(-8deg)}
+.steps h3{font-size:1.25rem}
+.steps p{color:var(--muted);font-size:1rem}
+.join-cta{margin-top:40px;align-items:center}
+.join-cta p{color:var(--muted);font-size:var(--fs-sm)}
+.opt-card{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:16px;padding:20px 24px;border:2px dashed var(--coral);border-radius:var(--radius);background:linear-gradient(90deg,var(--coral-tint),var(--surface) 70%)}
+.opt-card > div{flex:1 1 320px;min-width:0}
+.opt-card h3{font-size:1.2rem}
+.opt-card p{margin-top:4px;color:var(--muted)}
+.opt-tag{flex:none;padding:5px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--coral);color:var(--coral-ink);font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:900px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* вопросы */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:32px 64px;align-items:start}
+.faq-grid .head{margin-bottom:0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq details:nth-child(4n+1){--q:var(--teal-tint);--qi:var(--teal-ink)}
+.faq details:nth-child(4n+2){--q:var(--coral-tint);--qi:var(--coral-ink)}
+.faq details:nth-child(4n+3){--q:var(--sky-tint);--qi:var(--sky-ink)}
+.faq details:nth-child(4n+4){--q:var(--lilac-tint);--qi:var(--lilac-ink)}
+.faq details[open]{background:linear-gradient(90deg,var(--q),transparent 85%)}
+.faq summary{position:relative;list-style:none;cursor:pointer;padding:22px 56px 22px 14px;font:700 1.15rem/1.35 var(--display);transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:10px;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:linear-gradient(var(--qi),var(--qi)) center/12px 2px no-repeat,linear-gradient(var(--qi),var(--qi)) center/2px 12px no-repeat,var(--q);transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(135deg)}
+.faq summary:hover{color:var(--teal-ink)}
+.faq details p{padding:0 14px 22px;color:var(--muted);max-width:62ch}
+.faq details[open] p{animation:unfold .4s var(--ease)}
+@keyframes unfold{from{opacity:0;transform:translateY(-8px)}}
+@media (max-width:860px){.faq-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* подвал: тёмная карточка, как финальный слайд */
+.foot .wrap{display:grid;gap:32px;padding-block:8px 36px}
+.foot-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 48px;align-items:end;padding:clamp(32px,5vw,56px);border-radius:30px}
+.foot-card > :not(.deco){position:relative;z-index:1}
+.foot-card .ar-salam{font:700 clamp(1.5rem,1.2rem + 1.2vw,2.1rem)/1.8 var(--arabic);color:var(--gold-bright);margin-bottom:6px}
+.foot h2{font-size:var(--fs-h2);color:var(--on-forest)}
+.foot-card p{margin-top:12px;font-size:1.125rem;max-width:34em}
+.foot-card p a{color:var(--on-forest)}
+.foot-card .baraka{margin-top:14px;font:800 1.1rem/1.3 var(--display);color:var(--sun)}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 32px;padding-top:14px;border-top:1px solid var(--line);font-size:.8125rem;color:var(--muted)}
+.legal a{color:var(--teal-ink)}
+.fill{background:#FFF1B8;color:#6B4E00;padding:0 .3em;border-radius:4px;font-weight:600}
+.foot-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;font-size:var(--fs-sm);color:var(--muted)}
+.foot-bottom .logo .badge{width:38px;height:38px}
+.foot-bottom .logo-name{font-size:.95rem}
+@media (max-width:760px){.foot-card{grid-template-columns:minmax(0,1fr);align-items:start}}
+
+/* появление при прокрутке: класс ставит скрипт только блокам ниже первого экрана */
+.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.pre{opacity:0;transform:translateY(28px)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .draw{stroke-dasharray:none;stroke-dashoffset:0}
+}
+</style>
+<!--BODY-->
+<div lang="ru">
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="mark" viewBox="270 340 860 495"><path class="mk-line" d="M412 798H912Q944 798 964 771L1092 601H1000Q970 601 956 570M820 371V798"/><circle class="mk-line" cx="667" cy="734" r="64"/><circle class="mk-ring" cx="412" cy="692" r="106"/><g class="mk-dot"><rect x="354" y="486" width="44" height="44" rx="5" transform="rotate(45 376 508)"/><rect x="423" y="486" width="44" height="44" rx="5" transform="rotate(45 445 508)"/><rect x="611" y="584" width="44" height="44" rx="5" transform="rotate(45 633 606)"/><rect x="679" y="584" width="44" height="44" rx="5" transform="rotate(45 701 606)"/></g></symbol>
+  <symbol id="badge" viewBox="0 0 100 100"><circle class="bd-bg" cx="50" cy="50" r="50"/><circle class="bd-ring" cx="50" cy="50" r="45.5"/><g transform="translate(15 29.85) scale(.0814) translate(-270 -340)"><path class="bd-line" d="M412 798H912Q944 798 964 771L1092 601H1000Q970 601 956 570M820 371V798"/><circle class="bd-line" cx="667" cy="734" r="64"/><circle class="bd-mint" cx="412" cy="692" r="106"/><g class="mk-dot"><rect x="350" y="482" width="52" height="52" rx="6" transform="rotate(45 376 508)"/><rect x="419" y="482" width="52" height="52" rx="6" transform="rotate(45 445 508)"/><rect x="607" y="580" width="52" height="52" rx="6" transform="rotate(45 633 606)"/><rect x="675" y="580" width="52" height="52" rx="6" transform="rotate(45 701 606)"/></g></g></symbol>
+  <symbol id="star" viewBox="0 0 80 80"><polygon points="40,6 49.96,15.96 64.04,15.96 64.04,30.04 74,40 64.04,49.96 64.04,64.04 49.96,64.04 40,74 30.04,64.04 15.96,64.04 15.96,49.96 6,40 15.96,30.04 15.96,15.96 30.04,15.96"/></symbol>
+  <symbol id="ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="4"/></symbol>
+  <symbol id="dia" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3" transform="rotate(45 12 12)"/></symbol>
+  <symbol id="squig" viewBox="0 0 48 16"><path d="M3 8c4-6 8-6 10.5 0s7 6 10.5 0 7-6 10.5 0 7 6 10.5 0" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></symbol>
+  <symbol id="orn" viewBox="0 0 150 22"><path d="M4 14C30 14 44 5 62 9M146 14C120 14 106 5 88 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="66" y="2" width="18" height="18" rx="3" transform="rotate(45 75 11)" fill="currentColor"/><circle cx="40" cy="11" r="3" fill="currentColor"/><circle cx="110" cy="11" r="3" fill="currentColor"/></symbol>
+  <symbol id="tg" viewBox="0 0 24 24"><path fill="currentColor" d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4.5h10a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-3.5 3v-3H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z"/><path d="M18.5 9H20a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1.5v3L15 18h-3a2 2 0 0 1-2-2v-.5"/></symbol>
+  <symbol id="i-move" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2"/><path d="M5 6.5l7 3 7-3M12 9.5v5M12 14.5l-4 6M12 14.5l4 6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path d="M7 9a5 5 0 0 1 10 0c0 2.6-2 3.6-3 4.8-.8 1-1 2-1 3.2a2.5 2.5 0 0 1-5 0"/><path d="M10 9.5a2 2 0 0 1 4 0"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5L19.5 6.5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v.1h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><path d="M9 9a3 3 0 1 1 4.2 2.8c-.8.4-1.2 1-1.2 1.9V14M12 18h.01"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="HALAQA, наверх">
+      <svg class="badge" viewBox="0 0 100 100" aria-hidden="true"><use href="#badge" width="100" height="100"/></svg>
+      <span class="logo-text"><span class="logo-name">HALAQA</span><span class="logo-sub">онлайн-уроки для детей</span></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#about">О нас</a>
+      <a href="#lessons">Уроки</a>
+      <a href="#teachers">Устазы</a>
+      <a href="#program">Программа</a>
+      <a href="#prices">Цены</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" data-link="zapis" href="https://t.me/halaqa_school">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="pattern" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="khatam" width="56" height="56" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="14" y="14" width="28" height="28"/>
+            <rect x="14" y="14" width="28" height="28" transform="rotate(45 28 28)"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#khatam)"/>
+    </svg>
+    <svg class="deco hide-sm" style="--c:var(--sun);--s:18px;--d:7s;top:9%;left:47%" aria-hidden="true"><use href="#dia"/></svg>
+    <svg class="deco squig hide-sm" style="--c:var(--sky);--s:14px;--d:8s;--dl:-2s;bottom:16%;left:2%" aria-hidden="true"><use href="#squig"/></svg>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="tagline">Живой диалог • полезные знания</p>
+        <h1><span class="nw">Онлайн-уроки</span> для детей <span class="nw grad">7–15 лет</span></h1>
+        <p class="dashes" aria-hidden="true"><i></i><i></i><i></i></p>
+        <p class="lead">Слушаем, размышляем и обсуждаем вместе. Истории пророков, основы Ислама, адаб и таджвид по методике «Муаллим сани». Устазы с образованием Кувейта и Сирии, среди них — хафиз Корана. Учиться можно из любой точки мира.</p>
+        <p class="chip" data-phase="open"><span><b>31 октября, суббота</b> · бесплатный открытый урок. Старт — 2&nbsp;ноября</span></p>
+        <p class="chip" data-phase="start" hidden><span><b>2 ноября</b> · старт первого семестра. Запись открыта</span></p>
+        <p class="chip" data-phase="late" hidden><span><b>Учёба идёт</b> · донабор до 15&nbsp;ноября</span></p>
+        <p class="chip" data-phase="closed" hidden><span><b>Следующий набор — в феврале</b> · запишем в лист ожидания</span></p>
+        <div class="actions">
+          <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">
+            <svg aria-hidden="true"><use href="#tg"/></svg>
+            <span data-phase="open">Записаться на открытый урок</span><span data-phase="start late" hidden>Записаться</span><span data-phase="closed" hidden>В лист ожидания</span>
+          </a>
+          <a class="btn btn-ghost" data-link="kanal" data-needs="kanal" href="https://t.me/halaqaschool">Канал HALAQA</a>
+        </div>
+        <p class="reply-note">Отвечаем в Telegram, <span class="nw">@halaqa_school</span>, с 9:00 до 21:00 по Москве<span data-needs="whatsapp" hidden>. Не открывается Telegram? <a data-link="whatsapp" href="#">Напишите в WhatsApp</a></span></p>
+      </div>
+
+      <figure class="circle">
+        <svg class="deco" style="--c:var(--coral);--s:30px;--d:6s;top:0;left:4%" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="deco" style="--c:var(--lilac);--s:20px;--d:7.5s;--dl:-3s;top:8%;right:3%" aria-hidden="true"><use href="#dia"/></svg>
+        <svg class="deco" style="--c:var(--sky);--s:26px;--d:6.5s;--dl:-1s;bottom:30%;left:0" aria-hidden="true"><use href="#ring"/></svg>
+        <svg class="deco" style="--c:var(--sun);--s:24px;--d:8s;--dl:-4s;bottom:26%;right:1%" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="ring-art" viewBox="0 0 400 400" role="img" aria-labelledby="circle-title">
+          <title id="circle-title">Знак HALAQA в кругу из двенадцати учеников</title>
+          <circle class="disc" cx="200" cy="200" r="186"/>
+          <path class="ring-outer draw" pathLength="1" style="--at:0s;--dur:1.8s" d="M200 14A186 186 0 1 1 200 386A186 186 0 1 1 200 14"/>
+          <circle class="ring" cx="200" cy="200" r="150"/>
+          <g transform="translate(92 138) scale(.25116) translate(-270 -340)">
+            <path class="mk-line draw" pathLength="1" style="--at:.25s;--dur:1.2s" d="M956 570Q970 601 1000 601H1092L964 771Q944 798 912 798H412"/>
+            <path class="mk-line draw" pathLength="1" style="--at:.95s;--dur:.45s" d="M820 371V798"/>
+            <path class="mk-line draw" pathLength="1" style="--at:1.15s;--dur:.55s" d="M667 670A64 64 0 1 0 667 798A64 64 0 1 0 667 670"/>
+            <path class="mk-ring draw" pathLength="1" style="--at:1.45s;--dur:.7s" d="M412 586A106 106 0 1 0 412 798A106 106 0 1 0 412 586"/>
+            <g class="mk-dot">
+              <g class="pop" style="--at:1.85s"><rect x="679" y="584" width="44" height="44" rx="5" transform="rotate(45 701 606)"/></g>
+              <g class="pop" style="--at:1.93s"><rect x="611" y="584" width="44" height="44" rx="5" transform="rotate(45 633 606)"/></g>
+              <g class="pop" style="--at:2.01s"><rect x="423" y="486" width="44" height="44" rx="5" transform="rotate(45 445 508)"/></g>
+              <g class="pop" style="--at:2.09s"><rect x="354" y="486" width="44" height="44" rx="5" transform="rotate(45 376 508)"/></g>
+            </g>
+          </g>
+          <circle class="pupil" style="--at:2.1s;--c:var(--teal)" cx="200" cy="50" r="13"/>
+          <circle class="pupil" style="--at:2.17s;--c:var(--coral)" cx="275" cy="70.1" r="13"/>
+          <circle class="pupil" style="--at:2.24s;--c:var(--sun)" cx="329.9" cy="125" r="13"/>
+          <circle class="pupil" style="--at:2.31s;--c:var(--sky)" cx="350" cy="200" r="13"/>
+          <circle class="pupil" style="--at:2.38s;--c:var(--lilac)" cx="329.9" cy="275" r="13"/>
+          <circle class="pupil" style="--at:2.45s;--c:var(--mint)" cx="275" cy="329.9" r="13"/>
+          <circle class="pupil" style="--at:2.52s;--c:var(--coral)" cx="200" cy="350" r="13"/>
+          <circle class="pupil" style="--at:2.59s;--c:var(--sun)" cx="125" cy="329.9" r="13"/>
+          <circle class="pupil" style="--at:2.66s;--c:var(--sky)" cx="70.1" cy="275" r="13"/>
+          <circle class="pupil" style="--at:2.73s;--c:var(--lilac)" cx="50" cy="200" r="13"/>
+          <circle class="pupil" style="--at:2.8s;--c:var(--teal)" cx="70.1" cy="125" r="13"/>
+          <circle class="pupil" style="--at:2.87s;--c:var(--mint)" cx="125" cy="70.1" r="13"/>
+        </svg>
+        <figcaption><b>Халяка</b> — по-арабски «круг». Так издавна называют занятие, где ученики сидят вокруг учителя. В нашем круге до 12 детей.</figcaption>
+      </figure>
+
+      <div class="facts">
+        <p class="fact" style="--t:var(--teal-tint);--c:var(--teal);--ci:var(--teal-ink)"><b>4</b><span>предмета: История, Основы Ислама, Адаб, Таджвид</span></p>
+        <p class="fact" style="--t:var(--coral-tint);--c:var(--coral);--ci:var(--coral-ink)"><b>45</b><span>минут урок, 5 дней в неделю</span></p>
+        <p class="fact" style="--t:var(--sky-tint);--c:var(--sky);--ci:var(--sky-ink)"><b><small>до</small>12</b><span>детей в группе</span></p>
+        <p class="fact" style="--t:var(--gold-tint);--c:var(--sun);--ci:var(--gold-ink)"><b>12</b><span>учебных недель в семестре, в конце экзамен</span></p>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26C180 6 360 6 540 22s360 26 540 10 270-24 360-14V46H0Z"/></svg>
+  </section>
+
+  <section class="lesson" aria-label="Ближайшая дата">
+    <div class="wrap" data-phase="open">
+      <p class="cal" aria-hidden="true"><span class="cal-m">октябрь</span><span class="cal-d">31</span><span class="cal-w">суббота</span></p>
+      <div class="lesson-text">
+        <h2>Бесплатный открытый урок</h2>
+        <p>В Яндекс Телемосте, приходите вместе с ребёнком. Вы познакомитесь с устазами и увидите, как проходит урок. Ссылку на встречу пришлём лично после записи. Оплатить курс можно и без открытого урока.</p>
+      </div>
+      <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">Записаться на урок</a>
+    </div>
+    <div class="wrap" data-phase="start" hidden>
+      <p class="cal" aria-hidden="true"><span class="cal-m">ноябрь</span><span class="cal-d">2</span><span class="cal-w">понедельник</span></p>
+      <div class="lesson-text">
+        <h2>Старт первого семестра</h2>
+        <p>Запись открыта. Напишите нам: подберём группу и пришлём ссылку на оплату.</p>
+      </div>
+      <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">Записаться</a>
+    </div>
+    <div class="wrap" data-phase="late" hidden>
+      <p class="cal" aria-hidden="true"><span class="cal-m">ноябрь</span><span class="cal-d">15</span><span class="cal-w">конец набора</span></p>
+      <div class="lesson-text">
+        <h2>Донабор до 15 ноября</h2>
+        <p>Учёба уже идёт, но присоединиться ещё можно. Напишите нам, и мы подберём группу.</p>
+      </div>
+      <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">Записаться</a>
+    </div>
+    <div class="wrap" data-phase="closed" hidden>
+      <p class="cal" aria-hidden="true"><span class="cal-m">набор</span><span class="cal-d">фев</span><span class="cal-w">следующий</span></p>
+      <div class="lesson-text">
+        <h2>Следующий набор — в феврале</h2>
+        <p>Набор на осенний семестр закрыт. Напишите нам: запишем в лист ожидания и сообщим, когда откроется запись.</p>
+      </div>
+      <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">В лист ожидания</a>
+    </div>
+  </section>
+
+  <section class="section bg-mint has-deco" id="about">
+    <svg class="deco hide-sm" style="--c:var(--sun);--s:22px;--d:7s;top:10%;right:7%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--lilac);--s:16px;--d:6s;--dl:-2s;top:24%;right:18%" aria-hidden="true"><use href="#dia"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--teal-tint);--e-ink:var(--teal-ink)">О нас</p>
+        <h2>Системные знания и чтение <span class="hl hl-teal">Корана</span> из дома</h2>
+        <p>HALAQA — онлайн-уроки для детей <span class="nw">7–15 лет</span>. Учимся семестрами по три месяца, круглый год: в конце экзамен и переход на следующий уровень. Новый набор — каждый семестр.</p>
+      </div>
+      <div class="cards3">
+        <div class="card" style="--t:var(--teal-tint);--b:var(--teal)">
+          <span class="ico" style="--c:var(--teal);--c2:var(--teal-ink)"><svg class="filled" aria-hidden="true"><use href="#star"/></svg></span>
+          <h3>Кто учит</h3>
+          <p>Айнур и Набиль 7 лет учились в институте <span class="nw">ас-Сумайта</span> в Кувейте и обучают детей онлайн. Хафиз Али Якупов 6 лет учился в Дамаске и занял 1-е место на всероссийском конкурсе чтецов Корана.</p>
+        </div>
+        <div class="card" style="--t:var(--coral-tint);--b:var(--coral)">
+          <span class="ico" style="--c:var(--coral);--c2:var(--coral-ink)"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <h3>Внимание каждому</h3>
+          <p>Дети учатся в группе своего возраста, а внутри неё делятся по уровню чтения: с нуля или для тех, кто уже читает. Устаз знает каждого ученика.</p>
+        </div>
+        <div class="card" style="--t:var(--sky-tint);--b:var(--sky)">
+          <span class="ico" style="--c:var(--sky);--c2:var(--sky-ink)"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3>Результат виден</h3>
+          <p>В группе до 12 детей, уроки идут в формате диалога. Домашние задания и экзамен в конце семестра показывают, чему научился ребёнок.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-warm has-deco" id="lessons">
+    <svg class="deco hide-sm" style="--c:var(--coral);--s:26px;--d:7s;top:6%;right:6%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--sky);--s:22px;--d:6s;--dl:-2s;top:14%;right:16%" aria-hidden="true"><use href="#ring"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--coral-tint);--e-ink:var(--coral-ink)">Уроки</p>
+        <h2>Как проходит <span class="hl hl-coral">урок</span></h2>
+        <p>Каждый урок длится 45 минут и идёт по одному плану из семи шагов. Ребёнок знает, что будет дальше, а смена занятий помогает не уставать от экрана.</p>
+      </div>
+      <div class="tl-bar" aria-hidden="true">
+        <span style="--m:5;--i:0;--c:var(--teal)">1</span>
+        <span style="--m:3;--i:1;--c:var(--sky)">2</span>
+        <span style="--m:20;--i:2;--c:var(--green)">3</span>
+        <span style="--m:2;--i:3;--c:var(--coral)">4</span>
+        <span style="--m:10;--i:4;--c:var(--lilac)">5</span>
+        <span style="--m:3;--i:5;--c:var(--sun)">6</span>
+        <span style="--m:2;--i:6;--c:var(--mint-ink)">7</span>
+      </div>
+      <ol class="tl-legend">
+        <li style="--c:var(--teal)"><span><b>Повторение</b> 5 мин</span></li>
+        <li style="--c:var(--sky)"><span><b>Вступление</b> 3 мин</span></li>
+        <li style="--c:var(--green)"><span><b>Новая тема</b> 20 мин</span></li>
+        <li style="--c:var(--coral)"><span><b>Физминутка</b> 2 мин</span></li>
+        <li style="--c:var(--lilac)"><span><b>Закрепление</b> 10 мин</span></li>
+        <li style="--c:var(--sun)"><span><b>Рефлексия</b> 3 мин</span></li>
+        <li style="--c:var(--mint-ink)"><span><b>Домашнее задание</b> 2 мин</span></li>
+      </ol>
+      <div class="lcards">
+        <div class="lcard" style="--b:var(--teal);--t:var(--teal-tint)">
+          <div class="lc-top"><span class="ico" style="--c:var(--teal);--c2:var(--sky)"><svg aria-hidden="true"><use href="#i-chat"/></svg></span><div><p class="when" style="--ci:var(--teal-ink)">Весь урок</p><h3>Формат диалога</h3></div></div>
+          <p>Устаз объясняет тему и обсуждает её с детьми. Каждый может спросить и ответить.</p>
+          <ul class="tags"><li>Чистое намерение</li><li>Чуткое слушание</li><li>Доброе слово</li></ul>
+        </div>
+        <div class="lcard" style="--b:var(--coral);--t:var(--coral-tint)">
+          <div class="lc-top"><span class="ico" style="--c:var(--sun);--c2:var(--coral)"><svg class="jump" aria-hidden="true"><use href="#i-move"/></svg></span><div><p class="when" style="--ci:var(--coral-ink)">На каждом уроке</p><h3>Физминутка</h3></div></div>
+          <p>Встаём и тянемся, разминаем плечи, шею и руки, даём отдых глазам, чтобы не уставать от монитора.</p>
+        </div>
+        <div class="lcard" style="--b:var(--sun);--t:var(--gold-tint)">
+          <div class="lc-top"><span class="ico" style="--c:var(--lilac);--c2:var(--sky-ink)"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span><div><p class="when" style="--ci:var(--gold-ink)">В конце урока</p><h3>Светофор знаний</h3></div></div>
+          <ul class="lights">
+            <li style="--c:var(--tl-green)">Зелёный — всё понятно</li>
+            <li style="--c:var(--tl-yellow);--dl:1.5s">Жёлтый — хочу повторить</li>
+            <li style="--c:var(--tl-red);--dl:3s">Красный — нужна помощь</li>
+          </ul>
+          <p>Так устаз и родители видят, насколько хорошо ребёнок усвоил тему.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-sky has-deco" id="teachers">
+    <svg class="deco hide-sm" style="--c:var(--coral);--s:24px;--d:7s;top:9%;right:8%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--teal);--s:20px;--d:6.5s;--dl:-3s;top:22%;right:20%" aria-hidden="true"><use href="#ring"/></svg>
+    <svg class="deco squig hide-sm" style="--c:var(--sun);--s:14px;--d:8s;--dl:-1s;bottom:6%;left:3%" aria-hidden="true"><use href="#squig"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--sky-tint);--e-ink:var(--sky-ink)">Устазы</p>
+        <h2>Кто ведёт <span class="hl hl-sky">уроки</span></h2>
+        <p>Устазы HALAQA учились в Кувейте и Сирии и обучают детей онлайн.</p>
+      </div>
+      <ul class="teachers">
+        <li class="teacher" style="--t:var(--teal-tint);--c:var(--teal);--ci:var(--teal-ink)">
+          <div class="t-side">
+            <div class="t-head">
+              <div class="mono" aria-hidden="true"><svg><use href="#star"/></svg><span>А</span></div>
+              <div><h3>Устаз Айнур</h3><p class="t-role">Имам мечети «Ихсан»</p></div>
+            </div>
+            <div class="t-stats">
+              <p class="t-stat"><b>8 лет</b><span>преподаёт детям</span></p>
+              <p class="t-stat"><b>7 лет</b><span>учёбы в Кувейте</span></p>
+              <p class="t-stat"><b>4 года</b><span>в онлайн-школе «Умакласс»</span></p>
+              <p class="t-stat"><b>с 2019</b><span>имам мечети «Ихсан»</span></p>
+            </div>
+          </div>
+          <details class="more">
+            <summary><span class="open-label">Подробнее</span><span class="less">Свернуть</span></summary>
+            <dl class="bio">
+            <div><dt>Образование</dt>
+              <dd><b>2012–2019</b> — Религиозный институт Абдуррахмана <span class="nw">ас-Сумайта</span>, Кувейт</dd>
+              <dd><b>2017–2021</b> — МОИ, прикладная информатика</dd>
+            </div>
+            <div><dt>Повышение квалификации</dt>
+              <dd><b>2021</b> — «Теология», БГПУ</dd>
+              <dd><b>2024</b> — «Обучение онлайн», МГИМО</dd>
+            </div>
+            <div><dt>Опыт</dt>
+              <dd><b>8 лет</b> — преподаёт Коран, основы Ислама, таджвид и арабский язык детям разного возраста, онлайн и офлайн</dd>
+              <dd><b>4 года</b> — учитель математики, информатики и исламских дисциплин в онлайн-школе «Умакласс»</dd>
+              <dd><b>С 2019</b> — имам мечети «Ихсан»</dd>
+            </div>
+          </dl>
+          </details>
+        </li>
+        <li class="teacher" style="--t:var(--gold-tint);--c:var(--sun);--ci:var(--gold-ink)">
+          <div class="t-side">
+            <div class="t-head">
+              <div class="mono" aria-hidden="true"><svg><use href="#star"/></svg><span>Н</span></div>
+              <div><h3>Устаз Набиль</h3><p class="t-role">Преподаёт исламские дисциплины</p></div>
+            </div>
+            <div class="t-stats">
+              <p class="t-stat"><b>7 лет</b><span>учёбы в Кувейте</span></p>
+              <p class="t-stat"><b>3 года</b><span>обучает детей онлайн</span></p>
+            </div>
+          </div>
+          <details class="more">
+            <summary><span class="open-label">Подробнее</span><span class="less">Свернуть</span></summary>
+            <dl class="bio">
+            <div><dt>Образование</dt>
+              <dd><b>2016–2023</b> — Религиозный институт Абдуррахмана <span class="nw">ас-Сумайта</span>, Кувейт: исламские дисциплины</dd>
+              <dd>Курсы шейха Усмана Хамиса</dd>
+              <dd>Онлайн-семинары по исламским наукам</dd>
+            </div>
+            <div><dt>Опыт</dt>
+              <dd><b>3 года</b> — онлайн-обучение детей, преподаёт по сей день</dd>
+            </div>
+          </dl>
+          </details>
+        </li>
+        <li class="teacher" style="--t:var(--sky-tint);--c:var(--sky);--ci:var(--sky-ink)">
+          <div class="t-side">
+            <div class="t-head">
+              <div class="mono" aria-hidden="true"><svg><use href="#star"/></svg><span>А</span></div>
+              <div><h3>Хафиз Али Якупов</h3><p class="t-role">Хафиз Корана, имам-хатыб</p></div>
+            </div>
+            <div class="t-stats">
+              <p class="t-stat"><b>8 лет</b><span>исламского образования</span></p>
+              <p class="t-stat"><b>10+ лет</b><span>имам-хатыб</span></p>
+              <p class="t-stat"><b>1-е место</b><span>всероссийский конкурс чтецов Корана</span></p>
+              <p class="t-stat"><b>4</b><span>международных конкурса чтецов</span></p>
+            </div>
+          </div>
+          <details class="more">
+            <summary><span class="open-label">Подробнее</span><span class="less">Свернуть</span></summary>
+            <dl class="bio">
+            <div><dt>Образование</dt>
+              <dd><b>2002–2004</b> — Альметьевское исламское медресе</dd>
+              <dd><b>2005–2011</b> — 6 лет в университете «Абу-Нур», Дамаск: диплом шариатской квалификации</dd>
+              <dd>Диплом арабского языка, арабский институт в Дамаске</dd>
+              <dd><b>2 года</b> заучивал Коран наизусть, получил иджазу — диплом хафиза</dd>
+            </div>
+            <div><dt>Опыт</dt>
+              <dd><b>С 2023</b> — имам-хатыб Республики Тринидад и Тобаго</dd>
+              <dd><b>2016–2023</b> — имам-хатыб мечетей «Ихлас» и «Медина», шариатский судья по семейному праву</dd>
+            </div>
+            <div><dt>Достижения</dt>
+              <dd><b>2011</b> — 1-е место на всероссийском конкурсе чтецов Корана, Москва</dd>
+              <dd>Представлял Россию на международных конкурсах чтецов: Алжир <b>2010</b>, Москва <b>2011</b>, Бахрейн <b>2011</b>, Иордания <b>2012</b></dd>
+              <dd>Член Постоянного комитета Международной организации чтецов Корана</dd>
+            </div>
+          </dl>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="program">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--lilac-tint);--e-ink:var(--lilac-ink)">Программа первого семестра</p>
+        <h2>Четыре предмета, <span class="hl hl-lilac">пять уроков</span> в неделю</h2>
+        <p>12 учебных недель: месяц за месяцем дети идут от основ к углублению и итоговым экзаменам. После уроков — домашние задания.</p>
+      </div>
+      <ol class="week">
+        <li style="--c:var(--coral);--t:var(--coral-tint);--ci:var(--coral-ink)">
+          <span class="day-row"><span class="day">Пн</span><span class="topics">16 тем</span></span>
+          <span class="subj">История Ислама</span>
+          <p>От сотворения мира и Адама до Ибрахима, Исмаила, Исхака и Йакуба (мир им)</p>
+        </li>
+        <li style="--c:var(--teal);--t:var(--teal-tint);--ci:var(--teal-ink)">
+          <span class="day-row"><span class="day">Вт</span><span class="topics">урок 1 из 2</span></span>
+          <span class="subj">Таджвид</span>
+          <p>По «Муаллим сани»: новая буква у «Начинающих», новое правило у «Продолжающих»</p>
+        </li>
+        <li style="--c:var(--sky);--t:var(--sky-tint);--ci:var(--sky-ink)">
+          <span class="day-row"><span class="day">Ср</span><span class="topics">14 тем</span></span>
+          <span class="subj">Основы Ислама</span>
+          <p>5 столпов Ислама и 6 столпов Имана по хадису Джибриля</p>
+        </li>
+        <li style="--c:var(--teal);--t:var(--teal-tint);--ci:var(--teal-ink)">
+          <span class="day-row"><span class="day">Чт</span><span class="topics">урок 2 из 2</span></span>
+          <span class="subj">Таджвид</span>
+          <p>Новая буква и чтение слов у «Начинающих», практика у «Продолжающих»</p>
+        </li>
+        <li style="--c:var(--lilac);--t:var(--lilac-tint);--ci:var(--lilac-ink)">
+          <span class="day-row"><span class="day">Пт</span><span class="topics">14 тем</span></span>
+          <span class="subj">Адаб</span>
+          <p>Благой нрав: этикет речи и еды, чистота, уважение к родителям, соседям и гостям</p>
+        </li>
+      </ol>
+
+      <h3 class="sub-h block-gap">Семестр по месяцам</h3>
+      <div class="months">
+        <div class="month" style="--b:var(--tl-green);--t:var(--tl-green-tint);--ci:var(--tl-green-ink)">
+          <span class="month-tag">Месяц 1 · недели 1–4</span>
+          <h3>Основы и знакомство</h3>
+          <ul>
+            <li><b>История:</b> сотворение мира, пророки Адам, Шис, Идрис и Нух (мир им)</li>
+            <li><b>Основы:</b> хадис Джибриля, Шахада, намаз, закят, пост</li>
+            <li><b>Адаб:</b> адаб знаний, к Аллаху, Посланнику ﷺ и Корану, чистота</li>
+            <li><b>Таджвид:</b> первые 8 букв <span class="ar nw" lang="ar" dir="rtl">ا ر ز م ت ن ي ب</span> или повторение букв</li>
+          </ul>
+        </div>
+        <div class="month" style="--b:var(--sky);--t:var(--sky-tint);--ci:var(--sky-ink)">
+          <span class="month-tag">Месяц 2 · недели 5–8</span>
+          <h3>Углубление и практика</h3>
+          <ul>
+            <li><b>История:</b> пророки Худ, Салих, Лут и Ибрахим (мир им)</li>
+            <li><b>Основы:</b> хадж, вера в Аллаха, ангелов и Писания</li>
+            <li><b>Адаб:</b> еда и питьё, речь, родители и родственники</li>
+            <li><b>Таджвид:</b> 16 букв у «Начинающих», первые 7 тем правил у «Продолжающих»</li>
+          </ul>
+        </div>
+        <div class="month" style="--b:var(--sun);--t:var(--gold-tint);--ci:var(--gold-ink)">
+          <span class="month-tag">Месяц 3 · недели 9–12</span>
+          <h3>Завершение и экзамены</h3>
+          <ul>
+            <li><b>История:</b> Исмаил, Исхак, строительство Каабы, Йакуб (мир им)</li>
+            <li><b>Основы:</b> вера в пророков, Судный день и предопределение</li>
+            <li><b>Адаб:</b> соседи, гости, поведение в мечети</li>
+            <li><b>11-я неделя</b> — большое повторение, <b>12-я</b> — итоговые экзамены по всем 4 предметам</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="sub-h block-gap">Таджвид по методике «Муаллим сани»</h3>
+      <div class="levels">
+        <div class="level" style="--b:var(--teal);--t:var(--teal-tint);--ci:var(--teal-ink)">
+          <b>«Начинающие»</b>
+          <p class="ar-row" lang="ar" dir="rtl">ا ر ز م ت ن ي ب</p>
+          <p>Одна буква — один урок, от простых звуков к сложным. Уже со 2-го урока дети читают слоги и слова. За семестр — 23 буквы, оставшиеся 5 — на дополнительном модуле из 3 недель.</p>
+        </div>
+        <div class="level" style="--b:var(--sky);--t:var(--sky-tint);--ci:var(--sky-ink)">
+          <b>«Продолжающие»</b>
+          <p class="ar-row" lang="ar" dir="rtl">ق ط ب ج د</p>
+          <p>Повторение всех 28 букв, по 3 за урок, затем 15 тем правил таджвида: калькаля, гунна, правила нун и мим сукуна и другие.</p>
+        </div>
+      </div>
+      <p class="prog-note">В каждой возрастной группе дети делятся по уровню чтения. После экзамена ребёнок переходит на следующий семестр.</p>
+    </div>
+  </section>
+
+  <section class="groups has-deco" aria-labelledby="groups-title">
+    <svg class="deco hide-sm" style="--c:var(--sun);--s:22px;--d:7s;top:14%;left:46%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--coral);--s:16px;--d:6s;--dl:-3s;bottom:14%;left:40%" aria-hidden="true"><use href="#dia"/></svg>
+    <div class="wrap">
+      <div class="groups-text">
+        <p class="eyebrow" style="--e-bg:var(--gold-tint);--e-ink:var(--gold-ink)">Группы</p>
+        <h2 id="groups-title">Две группы <span class="hl hl-gold">по возрасту</span></h2>
+        <p>Дети учатся в группе своего возраста. Внутри неё мы делим учеников по уровню чтения: «Начинающие» и «Продолжающие».</p>
+      </div>
+      <div class="ages">
+        <p class="age" style="--b:var(--coral);--t:var(--gold-tint);--t2:var(--coral-tint);--ci:var(--coral-ink);--ci2:var(--gold-ink)"><b>7–10</b><span class="age-u">лет</span><span class="age-name">Младшая группа</span><span class="age-levels"><span>Начинающие</span><span>Продолжающие</span></span></p>
+        <p class="age" style="--b:var(--teal);--t:var(--teal-tint);--t2:var(--sky-tint);--ci:var(--teal-ink);--ci2:var(--sky-ink)"><b>11–15</b><span class="age-u">лет</span><span class="age-name">Старшая группа</span><span class="age-levels"><span>Начинающие</span><span>Продолжающие</span></span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-mint has-deco" id="prices">
+    <svg class="deco hide-sm" style="--c:var(--coral);--s:22px;--d:7s;top:14%;right:10%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--sky);--s:18px;--d:6s;--dl:-2s;bottom:16%;right:6%" aria-hidden="true"><use href="#ring"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--teal-tint);--e-ink:var(--teal-ink)">Цены</p>
+        <h2>Можно начать с <span class="hl hl-teal">одного месяца</span></h2>
+      </div>
+      <div class="prices">
+        <article class="price">
+          <h3>Помесячно</h3>
+          <p class="amount">3&nbsp;900&nbsp;₽<small>в месяц</small></p>
+          <p>Оплачиваете месяц и смотрите, как идёт учёба.</p>
+          <p class="per">20 уроков в месяц · около <b>195&nbsp;₽</b> за урок</p>
+        </article>
+        <article class="price best">
+          <span class="badge-best">Выгоднее на 1&nbsp;800&nbsp;₽</span>
+          <h3>Семестр, 3 месяца</h3>
+          <p class="amount">9&nbsp;900&nbsp;₽<small class="old">11&nbsp;700&nbsp;₽</small></p>
+          <p>Экономия 1&nbsp;800&nbsp;₽, это почти полмесяца бесплатно.</p>
+          <p class="per">60 уроков за семестр · около <b>165&nbsp;₽</b> за урок</p>
+        </article>
+      </div>
+      <p class="price-note">Напишите нам, и мы пришлём ссылку на оплату в личные сообщения. Оплатить можно сразу<span data-phase="open">, открытый урок для этого не нужен</span>. Оплачивая, вы принимаете условия <a href="oferta.html">договора-оферты</a>.</p>
+    </div>
+  </section>
+
+  <section class="section bg-lilac has-deco" id="join">
+    <svg class="deco hide-sm" style="--c:var(--sun);--s:22px;--d:7s;top:12%;right:8%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco squig hide-sm" style="--c:var(--coral);--s:14px;--d:8s;--dl:-3s;top:20%;right:22%" aria-hidden="true"><use href="#squig"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--coral-tint);--e-ink:var(--coral-ink)">Запись</p>
+        <h2>Как <span class="hl hl-coral">записаться</span></h2>
+      </div>
+      <ol class="steps">
+        <li style="--b:var(--teal);--g:linear-gradient(135deg,var(--teal),var(--teal-ink))">
+          <h3>Напишите нам</h3>
+          <p>В Telegram, <span class="nw">@halaqa_school</span><span data-needs="whatsapp" hidden>, или в WhatsApp</span>. Расскажите, сколько лет ребёнку, читает ли он по-арабски и в каком вы городе. Подберём группу по возрасту и уровню чтения.</p>
+        </li>
+        <li style="--b:var(--sun);--g:linear-gradient(135deg,var(--sun),var(--gold-ink))">
+          <h3>Оплатите по ссылке</h3>
+          <p>Помесячно или сразу за семестр. Ссылку на оплату пришлём в личные сообщения.</p>
+        </li>
+        <li style="--b:var(--sky);--g:linear-gradient(135deg,var(--sky),var(--sky-ink))">
+          <h3>Вступите в группу учеников</h3>
+          <p>Там расписание, ссылки на уроки и домашние задания. До 14 лет в группе родители, старше — сами ученики.</p>
+        </li>
+      </ol>
+      <div class="opt-card" data-phase="open">
+        <span class="opt-tag">По желанию</span>
+        <div>
+          <h3>Бесплатный открытый урок 31 октября</h3>
+          <p>Приходите вместе с ребёнком в Яндекс Телемост и познакомьтесь с устазами. Это не обязательно: оплатить курс можно и сразу.</p>
+        </div>
+      </div>
+      <div class="actions join-cta">
+        <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school"><svg aria-hidden="true"><use href="#tg"/></svg>Написать @halaqa_school</a>
+        <a class="btn btn-ghost" data-link="whatsapp" data-needs="whatsapp" href="#" hidden>Написать в WhatsApp</a>
+        <span class="btn btn-soon" data-soon="whatsapp" aria-disabled="true">WhatsApp — скоро</span>
+        <p>Отвечаем с 9:00 до 21:00 по Москве</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-deco" id="faq">
+    <svg class="deco hide-sm" style="--c:var(--lilac);--s:20px;--d:7s;bottom:12%;left:5%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--teal);--s:16px;--d:6s;--dl:-2s;bottom:26%;left:14%" aria-hidden="true"><use href="#dia"/></svg>
+    <div class="wrap faq-grid">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--sky-tint);--e-ink:var(--sky-ink)">Вопросы</p>
+        <h2>Частые <span class="hl hl-sky">вопросы</span></h2>
+        <p>Не нашли ответ? Напишите нам в Telegram, <span class="nw">@halaqa_school</span>.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Ребёнок удержит внимание на онлайн-уроке?</summary>
+          <p>Урок длится 45 минут и идёт по плану из семи шагов: повторение, вступление, новая тема, физминутка, закрепление, рефлексия и домашнее задание. Занятия сменяют друг друга, поэтому дети не устают. В группе до 12 детей, и устаз знает каждого.</p>
+        </details>
+        <details>
+          <summary>Ребёнку не будет скучно, как в школе?</summary>
+          <p>Уроки идут в формате диалога: дети отвечают, задают вопросы и обсуждают тему с устазом. На уроках увлекательные задания и упражнения: викторины, сценки, чтение по цепочке, а физминутка помогает не уставать от монитора. В конце урока рефлексия «светофор знаний»: ребёнок показывает, что понял, а устаз и родители видят, насколько хорошо он усвоил тему.</p>
+        </details>
+        <details>
+          <summary>Как родители узнают, что ребёнок усвоил тему?</summary>
+          <p>В конце каждого урока проходит рефлексия «светофор знаний». Каждую неделю устаз проверяет домашние задания и даёт обратную связь. В конце семестра — итоговые экзамены по всем 4 предметам и обратная связь родителям.</p>
+        </details>
+        <details>
+          <summary>Ребёнок не читает по-арабски. Ему подойдёт?</summary>
+          <p>Да. В группе «Начинающие» дети учат буквы по методике «Муаллим сани»: одна буква за урок, и уже со 2-го урока читают слоги и слова. Уровень уточним при записи.</p>
+        </details>
+        <details>
+          <summary>Сколько букв выучит ребёнок за семестр?</summary>
+          <p>«Начинающие» осваивают 23 буквы, а оставшиеся 5 проходят на дополнительном модуле из 3 недель. «Продолжающие» повторяют все 28 букв и изучают 15 тем правил таджвида.</p>
+        </details>
+        <details>
+          <summary>Где проходят уроки? Нужен ли VPN?</summary>
+          <p>Уроки проходят в Яндекс Телемосте, VPN не нужен. У каждой группы постоянная ссылка, подключиться можно с телефона или компьютера.</p>
+        </details>
+        <details>
+          <summary>Мы живём не в России. Можно учиться?</summary>
+          <p>Да, учиться можно из любой точки мира. Расписание мы пишем по московскому времени, а при записи подскажем, во сколько уроки у вас.</p>
+        </details>
+        <details>
+          <summary>Сколько стоит и как оплатить?</summary>
+          <p>3&nbsp;900&nbsp;₽ в месяц или 9&nbsp;900&nbsp;₽ сразу за семестр из трёх месяцев. Напишите нам, и мы пришлём ссылку на оплату в личные сообщения. Оплатить можно сразу, открытый урок не обязателен. Если вы за рубежом, подскажем, как оплатить.</p>
+        </details>
+        <details>
+          <summary>Можно присоединиться после начала учёбы?</summary>
+          <p>Да, в первые две недели, до 15 ноября. Позже запишем вас в лист ожидания на февральский набор.</p>
+        </details>
+        <details>
+          <summary>Что будет после семестра?</summary>
+          <p>Экзамен и переход на следующий семестр. Учёба идёт круглый год, новый набор — каждые три месяца.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-card dark-card">
+      <svg class="deco" style="--c:var(--sun);--s:20px;--d:6s;bottom:16%;right:36%" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="deco hide-sm" style="--c:var(--teal);--s:16px;--d:7s;--dl:-2s;top:16%;right:28%" aria-hidden="true"><use href="#ring"/></svg>
+      <div>
+        <p class="ar-salam" lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
+        <h2>Остались вопросы?</h2>
+        <p>Напишите в Telegram, <span class="nw">@halaqa_school</span>. Отвечаем с 9:00 до 21:00 по Москве.<span data-needs="whatsapp" hidden> Можно написать и в <a data-link="whatsapp" href="#">WhatsApp</a>: <span class="nw" data-phone></span>.</span><span data-soon="whatsapp"> Номер для WhatsApp скоро появится.</span></p>
+        <p class="baraka">БаракаЛлаху фикум! До встречи на уроках.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-gold" data-link="zapis" href="https://t.me/halaqa_school"><svg aria-hidden="true"><use href="#tg"/></svg>Записаться</a>
+        <a class="btn btn-ghost-light" data-link="kanal" data-needs="kanal" href="https://t.me/halaqaschool">Канал HALAQA</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <a class="logo" href="#top" aria-label="HALAQA, наверх"><svg class="badge" viewBox="0 0 100 100" aria-hidden="true"><use href="#badge" width="100" height="100"/></svg><span class="logo-text"><span class="logo-name">HALAQA</span></span></a>
+      <span>© 2026 · онлайн-уроки для детей <span class="nw">7–15 лет</span></span>
+      <span>На сайте нет форм и счётчиков</span>
+    </div>
+    <div class="legal">
+      <p>Исполнитель: самозанятый Горбунов Евгений Александрович, ИНН <span class="fill">[ИНН — заполнить]</span><br>Телефон: <span class="fill">[телефон — заполнить]</span> · e-mail: <span class="fill">[e-mail — заполнить]</span> · Telegram: <a href="https://t.me/halaqa_school">@halaqa_school</a></p>
+      <p><a href="oferta.html">Договор-оферта и условия возврата</a><br><a href="politika.html">Политика обработки персональных данных</a></p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+(() => {
+  // Ссылки сайта. Пустая строка — кнопка не показывается, вместо неё заглушка «скоро».
+  const LINKS = {
+    zapis: 'https://t.me/halaqa_school',
+    kanal: 'https://t.me/halaqaschool',
+    whatsapp: ''   // номер для WhatsApp, только цифры, например '79991234567'
+  };
+  const href = (key) => key === 'whatsapp' ? 'https://wa.me/' + LINKS.whatsapp.replace(/\D/g, '') : LINKS[key];
+  document.querySelectorAll('[data-link]').forEach((a) => { if (LINKS[a.dataset.link]) a.href = href(a.dataset.link); });
+  document.querySelectorAll('[data-needs]').forEach((el) => { el.hidden = !LINKS[el.dataset.needs]; });
+  document.querySelectorAll('[data-soon]').forEach((el) => { el.hidden = Boolean(LINKS[el.dataset.soon]); });
+  const d = LINKS.whatsapp.replace(/\D/g, '');
+  if (d.length === 11) document.querySelectorAll('[data-phone]').forEach((el) => {
+    el.textContent = `+${d[0]} ${d.slice(1, 4)} ${d.slice(4, 7)}-${d.slice(7, 9)}-${d.slice(9)}`;
+  });
+
+  // Этапы набора, время московское. Каждый этап действует до указанного момента.
+  const PHASES = [
+    ['open', '2026-11-01T00:00:00+03:00'],   // до открытого урока 31 октября включительно
+    ['start', '2026-11-02T00:00:00+03:00'],  // 1 ноября: завтра старт
+    ['late', '2026-11-15T00:00:00+03:00'],   // донабор до 15 ноября
+    ['closed', null]                         // лист ожидания на февраль
+  ];
+  const now = Date.now();
+  const forced = location.hash.match(/^#phase-(open|start|late|closed)$/);  // этап вручную: адрес сайта + #phase-late
+  const phase = forced ? forced[1] : PHASES.find(([, until]) => !until || now < Date.parse(until))[0];
+  document.querySelectorAll('[data-phase]').forEach((el) => { el.hidden = !el.dataset.phase.split(' ').includes(phase); });
+
+  // Тень у шапки, когда страницу прокрутили.
+  const top = document.querySelector('.top');
+  const onScroll = () => top.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Появление блоков при прокрутке. Блоки первого экрана видны сразу.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    io.unobserve(el);
+    el.classList.remove('pre');
+    setTimeout(() => { el.classList.remove('rv'); el.style.transitionDelay = ''; }, 1600);
+  }), { rootMargin: '0px 0px -8% 0px' });
+  const reveal = (el, i = 0) => {
+    if (el.hidden || el.getBoundingClientRect().top < innerHeight * 0.92) return;
+    el.classList.add('rv', 'pre');
+    if (i) el.style.transitionDelay = Math.min(i, 6) * 90 + 'ms';
+    io.observe(el);
+  };
+  document.querySelectorAll('.section .head, .tl-bar, .tl-legend, .sub-h, .prog-note, .groups-text, .price-note, .opt-card, .join-cta, .foot-card')
+    .forEach((el) => reveal(el));
+  document.querySelectorAll('.cards3, .lcards, .teachers, .week, .months, .levels, .ages, .prices, .steps, .faq')
+    .forEach((group) => [...group.children].filter((el) => !el.hidden).forEach((el, i) => reveal(el, i)));
+})();
+</script>
