@@ -1,8 +1,8 @@
 // Собирает форму заявления на возврат zayavlenie-na-vozvrat.pdf в корне
 // репозитория из _src/zayavlenie.html. Нужен Playwright с Chromium.
 // Запуск: node _src/build_pdf.js
-// Когда появится ИНН, впишите его в INN и пересоберите PDF.
-const INN = '';
+// ИНН исполнителя для шапки формы; при смене пересоберите PDF.
+const INN = '027320494315';
 
 const fs = require('fs');
 const path = require('path');
