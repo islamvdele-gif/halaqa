@@ -13,11 +13,13 @@
 | `index.html` | главная страница (собирается из `_src`, руками не править) |
 | `oferta.html` | публичная оферта |
 | `politika.html` | политика обработки персональных данных |
+| `zayavlenie-na-vozvrat.pdf` | форма заявления на возврат (собирается из `_src`) |
 | `og.png` | картинка для превью ссылки в мессенджерах |
 | `CNAME` | домен `halaqa.ru` для GitHub Pages |
 | `_src/src.html` | исходник главной страницы |
 | `_src/fonts/` | шрифты, которые встраиваются в страницу |
 | `_src/build.py` | сборка `index.html` |
+| `_src/zayavlenie.html`, `_src/build_pdf.js` | исходник и сборка PDF-формы возврата |
 
 Папка `_src`, `README.md` и `CLAUDE.md` на сайт не попадают.
 
@@ -26,6 +28,9 @@
 * Оферта и политика — правятся прямо в `oferta.html` и `politika.html`.
 * Главная — правится в `_src/src.html`, затем `python3 _src/build.py`
   пересобирает `index.html`. Оба файла коммитятся вместе.
+* Форма возврата — правится в `_src/zayavlenie.html`, затем
+  `node _src/build_pdf.js` пересобирает PDF (нужен Playwright с Chromium).
+  ИНН для формы задаётся в начале `_src/build_pdf.js`.
 * Ссылки на Telegram и WhatsApp — объект `LINKS` в конце `_src/src.html`.
   Пока номер WhatsApp пустой, на сайте показывается «WhatsApp — скоро».
 * Этапы набора (открытый урок → старт → донабор → лист ожидания)
@@ -35,9 +40,9 @@
 
 ## Перед проверкой Robokassa
 
-Заполнить поля `[… — заполнить]`: ИНН, адрес, e-mail, телефон
-и банковские реквизиты в `oferta.html`, контакты в `politika.html`
-и в подвале `_src/src.html` (потом пересобрать `index.html`).
+Заполнить поля `[… — заполнить]`: ИНН и телефон в `oferta.html`,
+`politika.html` и в подвале `_src/src.html` (потом пересобрать
+`index.html`), ИНН — ещё и в `_src/build_pdf.js` (пересобрать PDF).
 
 ## Шрифты
 
