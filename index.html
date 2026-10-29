@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="HALAQA — онлайн-уроки для детей 7–15 лет">
-<meta property="og:description" content="Живой диалог, полезные знания. Истории пророков, основы Ислама, адаб и таджвид. Устаз с образованием Кувейта, группы до 12 человек.">
+<meta property="og:description" content="Живой диалог, полезные знания. Истории пророков, основы Ислама, адаб и таджвид. Группы до 12 человек, экзамен в конце семестра.">
 <link rel="canonical" href="https://halaqa.ru/">
 <meta property="og:url" content="https://halaqa.ru/">
 <meta property="og:image" content="https://halaqa.ru/og.png">
@@ -270,7 +270,7 @@ img,svg{max-width:100%}
 @media (max-width:900px){.lcards{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.tl-bar span{font-size:0}}
 
-/* устаз: одна карточка, биография раскрывается по кнопке «Подробнее» */
+/* карточки преподавателей: сейчас на сайте не используются */
 .teachers{display:grid;grid-template-columns:minmax(0,1fr);max-width:640px;margin-inline:auto;gap:18px;list-style:none;padding:0;align-items:start}
 .teacher{position:relative;display:grid;gap:18px;align-content:start;padding:28px 22px 22px;background:linear-gradient(165deg,var(--t) 0%,var(--surface) 55%);border:2px solid var(--c);border-radius:var(--radius);min-width:0;box-shadow:0 14px 30px -26px var(--c);transition:transform .35s var(--ease),box-shadow .35s}
 .teacher:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--c)}
@@ -463,7 +463,7 @@ img,svg{max-width:100%}
     <nav class="nav" aria-label="Разделы">
       <a href="#about">О нас</a>
       <a href="#lessons">Уроки</a>
-      <a href="#teachers">Устаз</a>
+      <a href="#results">Результат</a>
       <a href="#program">Программа</a>
       <a href="#prices">Цены</a>
       <a href="#faq">Вопросы</a>
@@ -492,7 +492,7 @@ img,svg{max-width:100%}
         <p class="tagline">Живой диалог • полезные знания</p>
         <h1><span class="nw">Онлайн-уроки</span> для детей <span class="nw grad">7–15 лет</span></h1>
         <p class="dashes" aria-hidden="true"><i></i><i></i><i></i></p>
-        <p class="lead">Слушаем, размышляем и обсуждаем вместе. Истории пророков, основы Ислама, адаб и таджвид по методике «Муаллим сани». Устаз с образованием Кувейта. Учиться можно из любой точки мира.</p>
+        <p class="lead">Слушаем, размышляем и обсуждаем вместе. Истории пророков, основы Ислама, адаб и таджвид по методике «Муаллим сани». Учиться можно из любой точки мира.</p>
         <p class="chip" data-phase="open"><span><b>31 октября, суббота</b> · бесплатный открытый урок. Старт — 2&nbsp;ноября</span></p>
         <p class="chip" data-phase="start" hidden><span><b>2 ноября</b> · старт первого семестра. Запись открыта</span></p>
         <p class="chip" data-phase="late" hidden><span><b>Учёба идёт</b> · донабор до 15&nbsp;ноября</span></p>
@@ -560,7 +560,7 @@ img,svg{max-width:100%}
       <p class="cal" aria-hidden="true"><span class="cal-m">октябрь</span><span class="cal-d">31</span><span class="cal-w">суббота</span></p>
       <div class="lesson-text">
         <h2>Бесплатный открытый урок</h2>
-        <p>В Яндекс Телемосте, приходите вместе с ребёнком. Вы познакомитесь с устазом и увидите, как проходит урок. Ссылку на встречу пришлём лично после записи. Оплатить курс можно и без открытого урока.</p>
+        <p>В Яндекс Телемосте, приходите вместе с ребёнком. Вы увидите, как проходит урок. Ссылку на встречу пришлём лично после записи. Оплатить курс можно и без открытого урока.</p>
       </div>
       <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">Записаться на урок</a>
     </div>
@@ -602,13 +602,13 @@ img,svg{max-width:100%}
       <div class="cards3">
         <div class="card" style="--t:var(--teal-tint);--b:var(--teal)">
           <span class="ico" style="--c:var(--teal);--c2:var(--teal-ink)"><svg class="filled" aria-hidden="true"><use href="#star"/></svg></span>
-          <h3>Кто учит</h3>
-          <p>Устаз Набиль 7 лет учился в институте <span class="nw">ас-Сумайта</span> в Кувейте и 3 года обучает детей онлайн.</p>
+          <h3>Живой диалог</h3>
+          <p>Дети не слушают лекцию, а спрашивают, отвечают и обсуждают тему вместе. Так знания запоминаются лучше.</p>
         </div>
         <div class="card" style="--t:var(--coral-tint);--b:var(--coral)">
           <span class="ico" style="--c:var(--coral);--c2:var(--coral-ink)"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
           <h3>Внимание каждому</h3>
-          <p>Дети учатся в группе своего возраста, а внутри неё делятся по уровню чтения: с нуля или для тех, кто уже читает. Устаз знает каждого ученика.</p>
+          <p>Дети учатся в группе своего возраста, а внутри неё делятся по уровню чтения: с нуля или для тех, кто уже читает. Каждый ученик на виду.</p>
         </div>
         <div class="card" style="--t:var(--sky-tint);--b:var(--sky)">
           <span class="ico" style="--c:var(--sky);--c2:var(--sky-ink)"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
@@ -649,7 +649,7 @@ img,svg{max-width:100%}
       <div class="lcards">
         <div class="lcard" style="--b:var(--teal);--t:var(--teal-tint)">
           <div class="lc-top"><span class="ico" style="--c:var(--teal);--c2:var(--sky)"><svg aria-hidden="true"><use href="#i-chat"/></svg></span><div><p class="when" style="--ci:var(--teal-ink)">Весь урок</p><h3>Формат диалога</h3></div></div>
-          <p>Устаз объясняет тему и обсуждает её с детьми. Каждый может спросить и ответить.</p>
+          <p>Новая тема разбирается вместе с детьми. Каждый может спросить и ответить.</p>
           <ul class="tags"><li>Чистое намерение</li><li>Чуткое слушание</li><li>Доброе слово</li></ul>
         </div>
         <div class="lcard" style="--b:var(--coral);--t:var(--coral-tint)">
@@ -663,49 +663,54 @@ img,svg{max-width:100%}
             <li style="--c:var(--tl-yellow);--dl:1.5s">Жёлтый — хочу повторить</li>
             <li style="--c:var(--tl-red);--dl:3s">Красный — нужна помощь</li>
           </ul>
-          <p>Так устаз и родители видят, насколько хорошо ребёнок усвоил тему.</p>
+          <p>Так родители видят, насколько хорошо ребёнок усвоил тему.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-sky has-deco" id="teachers">
+  <section class="section bg-sky has-deco" id="results">
     <svg class="deco hide-sm" style="--c:var(--coral);--s:24px;--d:7s;top:9%;right:8%" aria-hidden="true"><use href="#star"/></svg>
     <svg class="deco hide-sm" style="--c:var(--teal);--s:20px;--d:6.5s;--dl:-3s;top:22%;right:20%" aria-hidden="true"><use href="#ring"/></svg>
     <svg class="deco squig hide-sm" style="--c:var(--sun);--s:14px;--d:8s;--dl:-1s;bottom:6%;left:3%" aria-hidden="true"><use href="#squig"/></svg>
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" style="--e-bg:var(--sky-tint);--e-ink:var(--sky-ink)">Устаз</p>
-        <h2>Кто ведёт <span class="hl hl-sky">уроки</span></h2>
-        <p>Уроки HALAQA ведёт устаз Набиль: 7 лет учёбы в Кувейте и 3 года онлайн-уроков с детьми.</p>
+        <p class="eyebrow" style="--e-bg:var(--sky-tint);--e-ink:var(--sky-ink)">Результат</p>
+        <h2>Что ребёнок <span class="hl hl-sky">получит</span> за семестр</h2>
+        <p>Не просто уроки, а знания и навыки, которые остаются с ребёнком.</p>
       </div>
-      <ul class="teachers">
-        <li class="teacher" style="--t:var(--gold-tint);--c:var(--sun);--ci:var(--gold-ink)">
-          <div class="t-side">
-            <div class="t-head">
-              <div class="mono" aria-hidden="true"><svg><use href="#star"/></svg><span>Н</span></div>
-              <div><h3>Устаз Набиль</h3><p class="t-role">Преподаёт исламские дисциплины</p></div>
-            </div>
-            <div class="t-stats">
-              <p class="t-stat"><b>7 лет</b><span>учёбы в Кувейте</span></p>
-              <p class="t-stat"><b>3 года</b><span>обучает детей онлайн</span></p>
-            </div>
-          </div>
-          <details class="more">
-            <summary><span class="open-label">Подробнее</span><span class="less">Свернуть</span></summary>
-            <dl class="bio">
-            <div><dt>Образование</dt>
-              <dd><b>2016–2023</b> — Религиозный институт Абдуррахмана <span class="nw">ас-Сумайта</span>, Кувейт: исламские дисциплины</dd>
-              <dd>Курсы шейха Усмана Хамиса</dd>
-              <dd>Онлайн-семинары по исламским наукам</dd>
-            </div>
-            <div><dt>Опыт</dt>
-              <dd><b>3 года</b> — онлайн-обучение детей, преподаёт по сей день</dd>
-            </div>
-          </dl>
-          </details>
-        </li>
-      </ul>
+      <div class="cards3">
+        <div class="card" style="--t:var(--teal-tint);--b:var(--teal)">
+          <span class="ico" style="--c:var(--teal);--c2:var(--teal-ink)"><svg class="filled" aria-hidden="true"><use href="#star"/></svg></span>
+          <h3>Читает Коран по правилам</h3>
+          <p>Начинающие учат буквы по «Муаллим сани» и со 2-го урока читают слоги и слова. Продолжающие отрабатывают правила таджвида.</p>
+        </div>
+        <div class="card" style="--t:var(--sky-tint);--b:var(--sky)">
+          <span class="ico" style="--c:var(--sky);--c2:var(--sky-ink)"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3>Знает основы веры</h3>
+          <p>5 столпов Ислама и 6 столпов Имана: что они значат и как проявляются в жизни.</p>
+        </div>
+        <div class="card" style="--t:var(--coral-tint);--b:var(--coral)">
+          <span class="ico" style="--c:var(--coral);--c2:var(--coral-ink)"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span>
+          <h3>Знает истории пророков</h3>
+          <p>От Адама до Йакуба (мир им): ребёнок пересказывает истории и делает из них выводы.</p>
+        </div>
+        <div class="card" style="--t:var(--lilac-tint);--b:var(--lilac)">
+          <span class="ico" style="--c:var(--lilac);--c2:var(--lilac-ink)"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <h3>Благой нрав</h3>
+          <p>Этикет речи и еды, чистота, уважение к родителям, соседям и гостям — то, что видно дома каждый день.</p>
+        </div>
+        <div class="card" style="--t:var(--gold-tint);--b:var(--sun)">
+          <span class="ico" style="--c:var(--sun);--c2:var(--coral)"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>
+          <h3>Рассуждает и задаёт вопросы</h3>
+          <p>Уроки в формате диалога учат думать, говорить и слушать других, а не просто запоминать.</p>
+        </div>
+        <div class="card" style="--t:var(--teal-tint);--b:var(--teal)">
+          <span class="ico" style="--c:var(--teal);--c2:var(--teal-ink)"><svg aria-hidden="true"><use href="#i-move"/></svg></span>
+          <h3>Привычка учиться</h3>
+          <p>5 уроков в неделю, домашние задания и экзамен в конце семестра. Родители видят результат.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -864,7 +869,7 @@ img,svg{max-width:100%}
         <span class="opt-tag">По желанию</span>
         <div>
           <h3>Бесплатный открытый урок 31 октября</h3>
-          <p>Приходите вместе с ребёнком в Яндекс Телемост и познакомьтесь с устазом. Это не обязательно: оплатить курс можно и сразу.</p>
+          <p>Приходите вместе с ребёнком в Яндекс Телемост и посмотрите, как проходит урок. Это не обязательно: оплатить курс можно и сразу.</p>
         </div>
       </div>
       <div class="actions join-cta">
@@ -888,15 +893,15 @@ img,svg{max-width:100%}
       <div class="faq">
         <details>
           <summary>Ребёнок удержит внимание на онлайн-уроке?</summary>
-          <p>Урок длится 45 минут и идёт по плану из семи шагов: повторение, вступление, новая тема, физминутка, закрепление, рефлексия и домашнее задание. Занятия сменяют друг друга, поэтому дети не устают. В группе до 12 детей, и устаз знает каждого.</p>
+          <p>Урок длится 45 минут и идёт по плану из семи шагов: повторение, вступление, новая тема, физминутка, закрепление, рефлексия и домашнее задание. Занятия сменяют друг друга, поэтому дети не устают. В группе до 12 детей, и каждый ребёнок на виду.</p>
         </details>
         <details>
           <summary>Ребёнку не будет скучно, как в школе?</summary>
-          <p>Уроки идут в формате диалога: дети отвечают, задают вопросы и обсуждают тему с устазом. На уроках увлекательные задания и упражнения: викторины, сценки, чтение по цепочке, а физминутка помогает не уставать от монитора. В конце урока рефлексия «светофор знаний»: ребёнок показывает, что понял, а устаз и родители видят, насколько хорошо он усвоил тему.</p>
+          <p>Уроки идут в формате диалога: дети отвечают, задают вопросы и обсуждают тему вместе. На уроках увлекательные задания и упражнения: викторины, сценки, чтение по цепочке, а физминутка помогает не уставать от монитора. В конце урока рефлексия «светофор знаний»: ребёнок показывает, что понял, а родители видят, насколько хорошо он усвоил тему.</p>
         </details>
         <details>
           <summary>Как родители узнают, что ребёнок усвоил тему?</summary>
-          <p>В конце каждого урока проходит рефлексия «светофор знаний». Каждую неделю устаз проверяет домашние задания и даёт обратную связь. В конце семестра — итоговые экзамены по всем 4 предметам и обратная связь родителям.</p>
+          <p>В конце каждого урока проходит рефлексия «светофор знаний». Каждую неделю мы проверяем домашние задания и даёт обратную связь. В конце семестра — итоговые экзамены по всем 4 предметам и обратная связь родителям.</p>
         </details>
         <details>
           <summary>Ребёнок не читает по-арабски. Ему подойдёт?</summary>
