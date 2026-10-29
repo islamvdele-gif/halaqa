@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="HALAQA — онлайн-уроки для детей 7–15 лет">
-<meta property="og:description" content="Живой диалог, полезные знания. Истории пророков, основы Ислама, адаб и таджвид. Устазы с образованием Кувейта и Сирии, группы до 12 человек.">
+<meta property="og:description" content="Живой диалог, полезные знания. Истории пророков, основы Ислама, адаб и таджвид. Устаз с образованием Кувейта, группы до 12 человек.">
 <link rel="canonical" href="https://halaqa.ru/">
 <meta property="og:url" content="https://halaqa.ru/">
 <meta property="og:image" content="https://halaqa.ru/og.png">
@@ -270,8 +270,8 @@ img,svg{max-width:100%}
 @media (max-width:900px){.lcards{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.tl-bar span{font-size:0}}
 
-/* устазы: три карточки, биография раскрывается по кнопке «Подробнее» */
-.teachers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;padding:0;align-items:start}
+/* устаз: одна карточка, биография раскрывается по кнопке «Подробнее» */
+.teachers{display:grid;grid-template-columns:minmax(0,1fr);max-width:640px;margin-inline:auto;gap:18px;list-style:none;padding:0;align-items:start}
 .teacher{position:relative;display:grid;gap:18px;align-content:start;padding:28px 22px 22px;background:linear-gradient(165deg,var(--t) 0%,var(--surface) 55%);border:2px solid var(--c);border-radius:var(--radius);min-width:0;box-shadow:0 14px 30px -26px var(--c);transition:transform .35s var(--ease),box-shadow .35s}
 .teacher:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--c)}
 .t-side{display:grid;gap:18px;align-content:start;min-width:0}
@@ -463,7 +463,7 @@ img,svg{max-width:100%}
     <nav class="nav" aria-label="Разделы">
       <a href="#about">О нас</a>
       <a href="#lessons">Уроки</a>
-      <a href="#teachers">Устазы</a>
+      <a href="#teachers">Устаз</a>
       <a href="#program">Программа</a>
       <a href="#prices">Цены</a>
       <a href="#faq">Вопросы</a>
@@ -492,7 +492,7 @@ img,svg{max-width:100%}
         <p class="tagline">Живой диалог • полезные знания</p>
         <h1><span class="nw">Онлайн-уроки</span> для детей <span class="nw grad">7–15 лет</span></h1>
         <p class="dashes" aria-hidden="true"><i></i><i></i><i></i></p>
-        <p class="lead">Слушаем, размышляем и обсуждаем вместе. Истории пророков, основы Ислама, адаб и таджвид по методике «Муаллим сани». Устазы с образованием Кувейта и Сирии, среди них — хафиз Корана. Учиться можно из любой точки мира.</p>
+        <p class="lead">Слушаем, размышляем и обсуждаем вместе. Истории пророков, основы Ислама, адаб и таджвид по методике «Муаллим сани». Устаз с образованием Кувейта. Учиться можно из любой точки мира.</p>
         <p class="chip" data-phase="open"><span><b>31 октября, суббота</b> · бесплатный открытый урок. Старт — 2&nbsp;ноября</span></p>
         <p class="chip" data-phase="start" hidden><span><b>2 ноября</b> · старт первого семестра. Запись открыта</span></p>
         <p class="chip" data-phase="late" hidden><span><b>Учёба идёт</b> · донабор до 15&nbsp;ноября</span></p>
@@ -560,7 +560,7 @@ img,svg{max-width:100%}
       <p class="cal" aria-hidden="true"><span class="cal-m">октябрь</span><span class="cal-d">31</span><span class="cal-w">суббота</span></p>
       <div class="lesson-text">
         <h2>Бесплатный открытый урок</h2>
-        <p>В Яндекс Телемосте, приходите вместе с ребёнком. Вы познакомитесь с устазами и увидите, как проходит урок. Ссылку на встречу пришлём лично после записи. Оплатить курс можно и без открытого урока.</p>
+        <p>В Яндекс Телемосте, приходите вместе с ребёнком. Вы познакомитесь с устазом и увидите, как проходит урок. Ссылку на встречу пришлём лично после записи. Оплатить курс можно и без открытого урока.</p>
       </div>
       <a class="btn btn-primary" data-link="zapis" href="https://t.me/halaqa_school">Записаться на урок</a>
     </div>
@@ -603,7 +603,7 @@ img,svg{max-width:100%}
         <div class="card" style="--t:var(--teal-tint);--b:var(--teal)">
           <span class="ico" style="--c:var(--teal);--c2:var(--teal-ink)"><svg class="filled" aria-hidden="true"><use href="#star"/></svg></span>
           <h3>Кто учит</h3>
-          <p>Айнур и Набиль 7 лет учились в институте <span class="nw">ас-Сумайта</span> в Кувейте и обучают детей онлайн. Хафиз Али Якупов 6 лет учился в Дамаске и занял 1-е место на всероссийском конкурсе чтецов Корана.</p>
+          <p>Устаз Набиль 7 лет учился в институте <span class="nw">ас-Сумайта</span> в Кувейте и 3 года обучает детей онлайн.</p>
         </div>
         <div class="card" style="--t:var(--coral-tint);--b:var(--coral)">
           <span class="ico" style="--c:var(--coral);--c2:var(--coral-ink)"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
@@ -675,43 +675,11 @@ img,svg{max-width:100%}
     <svg class="deco squig hide-sm" style="--c:var(--sun);--s:14px;--d:8s;--dl:-1s;bottom:6%;left:3%" aria-hidden="true"><use href="#squig"/></svg>
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" style="--e-bg:var(--sky-tint);--e-ink:var(--sky-ink)">Устазы</p>
+        <p class="eyebrow" style="--e-bg:var(--sky-tint);--e-ink:var(--sky-ink)">Устаз</p>
         <h2>Кто ведёт <span class="hl hl-sky">уроки</span></h2>
-        <p>Устазы HALAQA учились в Кувейте и Сирии и обучают детей онлайн.</p>
+        <p>Уроки HALAQA ведёт устаз Набиль: 7 лет учёбы в Кувейте и 3 года онлайн-уроков с детьми.</p>
       </div>
       <ul class="teachers">
-        <li class="teacher" style="--t:var(--teal-tint);--c:var(--teal);--ci:var(--teal-ink)">
-          <div class="t-side">
-            <div class="t-head">
-              <div class="mono" aria-hidden="true"><svg><use href="#star"/></svg><span>А</span></div>
-              <div><h3>Устаз Айнур</h3><p class="t-role">Имам мечети «Ихсан»</p></div>
-            </div>
-            <div class="t-stats">
-              <p class="t-stat"><b>8 лет</b><span>преподаёт детям</span></p>
-              <p class="t-stat"><b>7 лет</b><span>учёбы в Кувейте</span></p>
-              <p class="t-stat"><b>4 года</b><span>в онлайн-школе «Умакласс»</span></p>
-              <p class="t-stat"><b>с 2019</b><span>имам мечети «Ихсан»</span></p>
-            </div>
-          </div>
-          <details class="more">
-            <summary><span class="open-label">Подробнее</span><span class="less">Свернуть</span></summary>
-            <dl class="bio">
-            <div><dt>Образование</dt>
-              <dd><b>2012–2019</b> — Религиозный институт Абдуррахмана <span class="nw">ас-Сумайта</span>, Кувейт</dd>
-              <dd><b>2017–2021</b> — МОИ, прикладная информатика</dd>
-            </div>
-            <div><dt>Повышение квалификации</dt>
-              <dd><b>2021</b> — «Теология», БГПУ</dd>
-              <dd><b>2024</b> — «Обучение онлайн», МГИМО</dd>
-            </div>
-            <div><dt>Опыт</dt>
-              <dd><b>8 лет</b> — преподаёт Коран, основы Ислама, таджвид и арабский язык детям разного возраста, онлайн и офлайн</dd>
-              <dd><b>4 года</b> — учитель математики, информатики и исламских дисциплин в онлайн-школе «Умакласс»</dd>
-              <dd><b>С 2019</b> — имам мечети «Ихсан»</dd>
-            </div>
-          </dl>
-          </details>
-        </li>
         <li class="teacher" style="--t:var(--gold-tint);--c:var(--sun);--ci:var(--gold-ink)">
           <div class="t-side">
             <div class="t-head">
@@ -733,40 +701,6 @@ img,svg{max-width:100%}
             </div>
             <div><dt>Опыт</dt>
               <dd><b>3 года</b> — онлайн-обучение детей, преподаёт по сей день</dd>
-            </div>
-          </dl>
-          </details>
-        </li>
-        <li class="teacher" style="--t:var(--sky-tint);--c:var(--sky);--ci:var(--sky-ink)">
-          <div class="t-side">
-            <div class="t-head">
-              <div class="mono" aria-hidden="true"><svg><use href="#star"/></svg><span>А</span></div>
-              <div><h3>Хафиз Али Якупов</h3><p class="t-role">Хафиз Корана, имам-хатыб</p></div>
-            </div>
-            <div class="t-stats">
-              <p class="t-stat"><b>8 лет</b><span>исламского образования</span></p>
-              <p class="t-stat"><b>10+ лет</b><span>имам-хатыб</span></p>
-              <p class="t-stat"><b>1-е место</b><span>всероссийский конкурс чтецов Корана</span></p>
-              <p class="t-stat"><b>4</b><span>международных конкурса чтецов</span></p>
-            </div>
-          </div>
-          <details class="more">
-            <summary><span class="open-label">Подробнее</span><span class="less">Свернуть</span></summary>
-            <dl class="bio">
-            <div><dt>Образование</dt>
-              <dd><b>2002–2004</b> — Альметьевское исламское медресе</dd>
-              <dd><b>2005–2011</b> — 6 лет в университете «Абу-Нур», Дамаск: диплом шариатской квалификации</dd>
-              <dd>Диплом арабского языка, арабский институт в Дамаске</dd>
-              <dd><b>2 года</b> заучивал Коран наизусть, получил иджазу — диплом хафиза</dd>
-            </div>
-            <div><dt>Опыт</dt>
-              <dd><b>С 2023</b> — имам-хатыб Республики Тринидад и Тобаго</dd>
-              <dd><b>2016–2023</b> — имам-хатыб мечетей «Ихлас» и «Медина», шариатский судья по семейному праву</dd>
-            </div>
-            <div><dt>Достижения</dt>
-              <dd><b>2011</b> — 1-е место на всероссийском конкурсе чтецов Корана, Москва</dd>
-              <dd>Представлял Россию на международных конкурсах чтецов: Алжир <b>2010</b>, Москва <b>2011</b>, Бахрейн <b>2011</b>, Иордания <b>2012</b></dd>
-              <dd>Член Постоянного комитета Международной организации чтецов Корана</dd>
             </div>
           </dl>
           </details>
@@ -930,7 +864,7 @@ img,svg{max-width:100%}
         <span class="opt-tag">По желанию</span>
         <div>
           <h3>Бесплатный открытый урок 31 октября</h3>
-          <p>Приходите вместе с ребёнком в Яндекс Телемост и познакомьтесь с устазами. Это не обязательно: оплатить курс можно и сразу.</p>
+          <p>Приходите вместе с ребёнком в Яндекс Телемост и познакомьтесь с устазом. Это не обязательно: оплатить курс можно и сразу.</p>
         </div>
       </div>
       <div class="actions join-cta">
