@@ -129,6 +129,7 @@ img,svg{max-width:100%}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 90%,transparent);-webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
 .top::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--grad-joy)}
 .top.scrolled{box-shadow:0 8px 28px -18px var(--shadow)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--grad-joy);transform:scaleX(var(--p,0));transform-origin:left}
 .top .wrap{display:flex;align-items:center;gap:28px;min-height:72px}
 .logo{display:flex;align-items:center;gap:12px;color:var(--green);text-decoration:none}
 .logo .badge{width:48px;height:48px;flex:none;transition:transform .6s var(--ease)}
@@ -244,13 +245,21 @@ img,svg{max-width:100%}
 .card p{color:var(--muted)}
 
 /* урок по минутам */
-.tl-bar{display:flex;gap:4px;height:26px}
-.tl-bar span{flex:var(--m) 1 0;min-width:0;display:grid;place-items:center;border-radius:7px;background:var(--c);font:800 .8125rem/1 var(--display);color:#FFFFFF;transform-origin:left;transition:transform .7s var(--ease) calc(var(--i) * 110ms)}
-.tl-bar.pre span{transform:scaleX(0)}
-.tl-legend{display:flex;flex-wrap:wrap;gap:8px 16px;list-style:none;padding:0;margin-top:14px;font-size:.9375rem;color:var(--muted)}
-.tl-legend li{display:flex;align-items:center;gap:7px}
-.tl-legend li::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--c)}
+.tl-bar{display:flex;gap:4px;height:30px}
+.tl-bar button{flex:var(--m) 1 0;min-width:0;display:grid;place-items:center;padding:0;border:0;border-radius:7px;background:var(--c);font:800 .8125rem/1 var(--display);color:#FFFFFF;cursor:pointer;transform-origin:left;transition:transform .7s var(--ease) calc(var(--i) * 110ms),box-shadow .25s,filter .2s}
+.tl-bar.pre button{transform:scaleX(0)}
+.tl-bar button:hover{filter:brightness(1.1)}
+.tl-bar button.on{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--c)}
+.tl-legend{display:flex;flex-wrap:wrap;gap:4px 6px;list-style:none;padding:0;margin:12px -10px 0;font-size:.9375rem;color:var(--muted)}
+.tl-legend li{display:flex}
+.tl-legend button{display:flex;align-items:center;gap:7px;padding:5px 10px;border:2px solid transparent;border-radius:999px;background:none;font:inherit;color:inherit;cursor:pointer;transition:background-color .2s,border-color .2s}
+.tl-legend button::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--c)}
+.tl-legend button:hover{background:var(--surface)}
+.tl-legend button.on{background:var(--surface);border-color:var(--c)}
 .tl-legend b{color:var(--ink);font-weight:600}
+.tl-say{display:flex;flex-wrap:wrap;gap:2px 8px;max-width:46em;min-height:3.4em;margin-top:14px;padding:12px 18px;border-radius:16px;background:var(--surface);border:2px solid var(--c,var(--line));color:var(--muted);transition:border-color .3s}
+.tl-say b{color:var(--ink);font-weight:600}
+.tl-say.swap{animation:unfold .35s var(--ease)}
 .lcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
 .lcard{display:grid;gap:12px;align-content:start;padding:26px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(165deg,var(--t) 0%,var(--surface) 60%);box-shadow:0 14px 30px -26px var(--b);min-width:0;transition:transform .35s var(--ease),box-shadow .35s}
 .lcard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px var(--b)}
@@ -263,9 +272,14 @@ img,svg{max-width:100%}
 .lcard > p{color:var(--muted)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0}
 .tags li{padding:4px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.8125rem;color:var(--ink)}
-.lights{display:grid;gap:6px;list-style:none;padding:0;font-size:.9375rem}
-.lights li{display:flex;align-items:center;gap:10px}
-.lights li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent);animation:lamp 4.5s ease-in-out var(--dl,0s) infinite}
+.lights{display:grid;gap:2px;list-style:none;padding:0;margin-inline:-10px;font-size:.9375rem}
+.lights button{display:flex;align-items:center;gap:10px;width:100%;padding:6px 10px;border:2px solid transparent;border-radius:12px;background:none;font:inherit;color:var(--ink);text-align:left;cursor:pointer;transition:background-color .2s,border-color .2s}
+.lights button::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent);animation:lamp 4.5s ease-in-out var(--dl,0s) infinite;transition:opacity .3s,box-shadow .3s}
+.lights button:hover{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.lights button[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--surface))}
+.lights button[aria-pressed="true"]::before{animation:none;opacity:1;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 30%,transparent),0 0 16px var(--c)}
+.lights.chosen button:not([aria-pressed="true"])::before{animation:none;opacity:.35}
+.lcard > .light-say{min-height:3.2em;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px dashed var(--line);font-size:.9375rem;color:var(--ink)}
 @keyframes lamp{0%,100%{opacity:.5}15%,30%{opacity:1}}
 @media (max-width:900px){.lcards{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.tl-bar span{font-size:0}}
@@ -343,7 +357,7 @@ img,svg{max-width:100%}
 .groups-text{display:grid;gap:14px}
 .groups-text p:last-child{font-size:1.125rem;color:var(--muted);max-width:32em}
 .ages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.age{display:grid;gap:2px;align-content:start;padding:26px 22px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(150deg,var(--t) 0%,var(--t2) 100%);min-width:0;transition:transform .35s var(--ease),box-shadow .35s}
+.age{display:grid;gap:2px;align-content:start;padding:26px 22px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(150deg,var(--t) 0%,var(--t2) 100%);min-width:0}
 .age:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:0 22px 44px -28px var(--shadow)}
 .age b{font:800 clamp(2.6rem,2rem + 2vw,3.5rem)/1 var(--display);background:linear-gradient(100deg,var(--ci),var(--ci2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--ci);font-variant-numeric:lining-nums;white-space:nowrap}
 .age-u{font-size:var(--fs-sm);color:var(--muted)}
@@ -410,6 +424,11 @@ img,svg{max-width:100%}
 .foot .wrap{display:grid;gap:32px;padding-block:8px 36px}
 .foot-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 48px;align-items:end;padding:clamp(32px,5vw,56px);border-radius:30px}
 .foot-card > :not(.deco){position:relative;z-index:1}
+.foot-card > .hang{position:absolute;top:0;right:clamp(28px,9vw,150px);display:grid;justify-items:center;transform-origin:50% 0;animation:swing 5s ease-in-out infinite;pointer-events:none}
+.hang::before{content:"";width:2px;height:clamp(18px,3vw,32px);background:var(--gold)}
+.hang svg{--green:var(--mint);width:clamp(60px,7vw,86px);height:auto;aspect-ratio:1;margin-top:-5px;overflow:visible;filter:drop-shadow(0 0 20px color-mix(in srgb,var(--gold-bright) 60%,transparent))}
+@keyframes swing{0%,100%{transform:rotate(4deg)}50%{transform:rotate(-4deg)}}
+@media (max-width:760px){.foot-card > .hang{display:none}}
 .foot-card .ar-salam{font:700 clamp(1.5rem,1.2rem + 1.2vw,2.1rem)/1.8 var(--arabic);color:var(--gold-bright);margin-bottom:6px}
 .foot h2{font-size:var(--fs-h2);color:var(--on-forest)}
 .foot-card p{margin-top:12px;font-size:1.125rem;max-width:34em}
@@ -422,6 +441,106 @@ img,svg{max-width:100%}
 .foot-bottom .logo .badge{width:38px;height:38px}
 .foot-bottom .logo-name{font-size:.95rem}
 @media (max-width:760px){.foot-card{grid-template-columns:minmax(0,1fr);align-items:start}}
+
+/* предметы-иллюстрации: книги, фонарь, полумесяц, калам. Живых существ не рисуем */
+.o-st{stroke:var(--green);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.o-line{fill:none;stroke:var(--green);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.o-thin{fill:none;stroke:var(--mint);stroke-width:2;stroke-linecap:round}
+.o-g{fill:var(--green)}.o-gd{fill:var(--green-deep)}.o-t{fill:var(--teal)}.o-tt{fill:var(--teal-tint)}.o-m{fill:var(--mint)}.o-o{fill:var(--gold)}.o-s{fill:var(--sun)}.o-b{fill:var(--gold-bright)}
+.o-c{fill:var(--coral)}.o-k{fill:var(--sky)}.o-l{fill:var(--lilac)}.o-w{fill:#FFFFFF}.o-p{fill:var(--gold-tint)}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 1.6s ease-in-out infinite}
+@keyframes flicker{50%{transform:scale(.88,1.14)}}
+.obj{position:absolute;z-index:2;width:var(--s);height:var(--s);overflow:visible;pointer-events:none;filter:drop-shadow(0 10px 10px color-mix(in srgb,var(--green) 20%,transparent));animation:sway var(--d,7s) ease-in-out var(--dl,0s) infinite;translate:calc(var(--px,0) * var(--k,16) * 1px) calc(var(--py,0) * var(--k,16) * 1px);transition:translate .6s var(--ease)}
+@keyframes sway{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+@media (max-width:520px){.obj{width:calc(var(--s) * .78);height:calc(var(--s) * .78)}}
+
+/* урок из дома: ноутбук, книги, чай */
+.about-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:28px 56px;align-items:center;margin-bottom:44px}
+.about-top .head{margin-bottom:0}
+.desk{width:100%;height:auto;overflow:visible}
+.desk .ar-t{font:700 19px/1 var(--arabic);fill:#FFFFFF}
+.desk .q{font:800 22px/1 var(--display);fill:var(--coral)}
+.desk .talk{fill:none;stroke:var(--sun);stroke-width:3.5;opacity:0;animation:talk 7.5s ease-in-out var(--dl,0s) infinite}
+@keyframes talk{0%,100%{opacity:0}5%,22%{opacity:1}28%{opacity:0}}
+.desk .steam{fill:none;stroke:var(--muted);stroke-opacity:.5;stroke-width:2.4;stroke-linecap:round;animation:steam 3.2s ease-in-out var(--dl,0s) infinite}
+@keyframes steam{0%{opacity:0;transform:translateY(6px)}40%{opacity:1}100%{opacity:0;transform:translateY(-10px)}}
+.desk .bubble{transform-box:fill-box;transform-origin:var(--o,0 100%);animation:bubble 7.5s var(--ease) var(--dl,0s) infinite}
+@keyframes bubble{0%,4%{transform:scale(.2);opacity:0}12%,78%{transform:scale(1);opacity:1}88%,100%{transform:scale(.6);opacity:0}}
+@media (max-width:900px){.about-top{grid-template-columns:minmax(0,1fr)}.desk{max-width:380px;justify-self:center}}
+
+/* поиграйте: «Найди пару» и «Первые слова» */
+.bg-gold{background:radial-gradient(40% 60% at 100% 0%,color-mix(in srgb,var(--teal) 14%,transparent),transparent 70%),linear-gradient(180deg,var(--paper) 0%,var(--gold-tint) 100%)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.game{display:grid;gap:14px;align-content:start;min-width:0;padding:26px;border:2px solid var(--b);border-radius:var(--radius);background:linear-gradient(165deg,var(--t) 0%,var(--surface) 45%);box-shadow:0 14px 30px -26px var(--b)}
+.game-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px}
+.game h3{font-size:var(--fs-h3)}
+.game-stat{font-size:var(--fs-sm);color:var(--muted);font-variant-numeric:tabular-nums lining-nums}
+.game-stat b{color:var(--ink);font-weight:600}
+.game-hint{font-size:var(--fs-sm);color:var(--muted)}
+.link-btn{justify-self:start;padding:0;border:0;background:none;font:600 var(--fs-sm)/1.4 var(--body);color:var(--teal-ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.memo-wrap{position:relative;container-type:inline-size}
+.memo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@container (min-width:460px){.memo-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.memo-wrap.won{min-height:236px}
+.memo{position:relative;aspect-ratio:4/5;padding:0;border:0;border-radius:14px;background:none;cursor:pointer;perspective:800px;-webkit-tap-highlight-color:transparent}
+.memo-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s var(--ease)}
+.memo:not(.open):not(.done):hover .memo-in{transform:translateY(-3px) rotate(-2deg)}
+.memo.open .memo-in,.memo.done .memo-in{transform:rotateY(180deg)}
+.memo-face{position:absolute;inset:0;display:grid;place-items:center;border-radius:14px;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.memo-back{background:radial-gradient(circle at 50% 38%,color-mix(in srgb,var(--teal) 50%,transparent),transparent 72%),linear-gradient(150deg,var(--green),var(--forest-deep));box-shadow:inset 0 0 0 3px var(--green),inset 0 0 0 6px color-mix(in srgb,var(--gold) 40%,transparent)}
+.memo-back svg{width:40%;height:auto;aspect-ratio:1;fill:var(--gold)}
+.memo-front{transform:rotateY(180deg);padding-bottom:.12em;background:var(--surface);border:2px solid var(--teal);color:var(--green);font:700 clamp(2rem,1.4rem + 1.8vw,2.6rem)/1 var(--arabic)}
+.memo.done .memo-front{border-color:var(--tl-green);background:var(--tl-green-tint);color:var(--tl-green-ink)}
+.memo.miss{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.memo-win{position:absolute;inset:-6px;z-index:4;display:grid;place-items:center;align-content:center;gap:10px;padding:16px;text-align:center;border-radius:18px;background:color-mix(in srgb,var(--surface) 94%,transparent);animation:rise .5s var(--ease)}
+.win-stars{display:flex;gap:8px;justify-content:center}
+.win-stars svg{width:38px;height:38px;fill:var(--line)}
+.win-stars svg.on{fill:var(--gold);animation:sit .55s cubic-bezier(.3,1.5,.5,1) backwards}
+.win-stars svg.on:nth-child(2){animation-delay:.12s}
+.win-stars svg.on:nth-child(3){animation-delay:.24s}
+.memo-win b{font:800 1.2rem/1.3 var(--display)}
+.memo-win p{color:var(--muted);font-size:var(--fs-sm);max-width:26em}
+.memo-win .actions{justify-content:center}
+.spark{position:absolute;z-index:5;width:10px;height:10px;margin:-5px;border-radius:2px;background:var(--c);pointer-events:none;transform:rotate(45deg);animation:spark .8s var(--ease) forwards}
+@keyframes spark{to{transform:translate(var(--x),var(--y)) rotate(225deg) scale(.3);opacity:0}}
+.words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;padding:0}
+.word{position:relative;display:block;width:100%;aspect-ratio:1/1.1;padding:0;border:0;border-radius:16px;background:none;font:inherit;color:inherit;cursor:pointer;perspective:700px;-webkit-tap-highlight-color:transparent}
+.word-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .55s var(--ease)}
+.word[aria-pressed="true"] .word-in{transform:rotateY(180deg)}
+.w-face{position:absolute;inset:0;display:grid;justify-items:center;align-content:center;gap:2px;padding:8px;border:2px solid var(--c);border-radius:16px;background:var(--surface);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:box-shadow .3s}
+.word:hover .w-face{box-shadow:0 14px 26px -18px var(--c)}
+.w-front{background:linear-gradient(160deg,var(--t),var(--surface) 85%)}
+.w-ar{font:700 clamp(1.55rem,1.1rem + 1.4vw,2.1rem)/1.5 var(--arabic);color:var(--ci)}
+.w-tap{font-size:.75rem;color:var(--muted)}
+.w-back{transform:rotateY(180deg)}
+.w-back svg{width:46%;max-width:60px;height:auto;aspect-ratio:1;margin-bottom:4px;overflow:visible}
+.w-ru{font:800 1.0625rem/1.15 var(--display);color:var(--ink)}
+.w-tr{font-size:.8125rem;line-height:1.2;color:var(--muted)}
+@media (max-width:900px){.play{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.game{padding:20px 16px}.memo-grid,.words{gap:8px}}
+
+/* подбор группы: возраст и уровень чтения → группа и готовое сообщение */
+.picker{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 40px;padding:26px 28px;background:var(--surface);border:2px solid var(--gold);border-radius:var(--radius);box-shadow:0 18px 40px -30px var(--shadow)}
+.pk-head{grid-column:1/-1;display:flex;align-items:center;gap:14px}
+.pk-head h3{font-size:var(--fs-h3)}
+.pk-label{margin-bottom:10px;font-weight:600}
+.pk-ages{display:flex;flex-wrap:wrap;gap:8px}
+.pk-btn{border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s,transform .2s var(--ease)}
+.pk-btn:hover{border-color:var(--teal);transform:translateY(-2px)}
+.pk-ages .pk-btn{width:48px;height:48px;border-radius:50%;font:800 1.1rem/1 var(--display);font-variant-numeric:lining-nums}
+.pk-ages .pk-btn[aria-pressed="true"]{border-color:transparent;background:linear-gradient(135deg,var(--teal),var(--teal-ink));color:#FFFFFF}
+.pk-opts{display:grid;gap:8px}
+.pk-opts .pk-btn{padding:11px 16px;border-radius:14px;text-align:left;font:600 1rem/1.3 var(--body)}
+.pk-opts .pk-btn[aria-pressed="true"]{border-color:var(--teal-ink);background:var(--teal-tint);color:var(--green)}
+.pk-out{grid-column:1/-1;min-width:0}
+.pk-wait{padding:14px 18px;border-radius:16px;border:2px dashed var(--line);color:var(--muted)}
+.pk-result{display:grid;gap:12px;padding:18px 20px;border-radius:16px;background:linear-gradient(120deg,var(--gold-tint),var(--mint-tint));animation:unfold .4s var(--ease)}
+.pk-result b{color:var(--green);font-weight:600}
+.pk-msg{white-space:pre-line;padding:12px 14px;border-radius:12px;background:var(--surface);border:1px dashed var(--line);font-size:var(--fs-sm);color:var(--ink)}
+.age{transition:transform .35s var(--ease),box-shadow .35s}
+.age.picked{transform:translateY(-4px);box-shadow:0 0 0 4px var(--b),0 22px 44px -28px var(--shadow)}
+@media (max-width:760px){.picker{grid-template-columns:minmax(0,1fr);padding:22px 18px}}
 
 /* появление при прокрутке: класс ставит скрипт только блокам ниже первого экрана */
 .rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -452,6 +571,12 @@ img,svg{max-width:100%}
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5L19.5 6.5"/></symbol>
   <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v.1h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/></symbol>
   <symbol id="i-q" viewBox="0 0 24 24"><path d="M9 9a3 3 0 1 1 4.2 2.8c-.8.4-1.2 1-1.2 1.9V14M12 18h.01"/></symbol>
+  <symbol id="il-book" viewBox="0 0 64 64"><path class="o-g" d="M4 19.5q14-5.5 28 2q14-7.5 28-2v31q-14-5.5-28 2q-14-7.5-28-2z"/><path class="o-w o-st" d="M8 15.5q12-4 24 3v31q-12-6.5-24-3z"/><path class="o-p o-st" d="M56 15.5q-12-4-24 3v31q12-6.5 24-3z"/><path class="o-thin" d="M13 23.5q7-1.8 14 1M13 29.5q7-1.8 14 1M13 35.5q7-1.8 14 1M37 24.5q7-2.8 14-1M37 30.5q7-2.8 14-1M37 36.5q4.5-1.8 9-1.2"/><path class="o-c" d="M45 16.2v13.3l2.6-2.2 2.6 2.2V15.6q-2.6-.2-5.2.6z"/></symbol>
+  <symbol id="il-lantern" viewBox="0 0 64 64"><circle class="o-line" cx="32" cy="5" r="3"/><path class="o-o o-st" d="M23 18L32 9.5 41 18z"/><rect class="o-g" x="19.5" y="17" width="25" height="5" rx="2"/><path class="o-b o-st" d="M21.5 22h21l-3.2 21.5H24.7z"/><g class="flame"><path class="o-w" d="M32 25.5q4.5 4.6 0 11.5q-4.5-6.9 0-11.5z"/><path class="o-s" d="M32 29.5q2.3 2.6 0 6.3q-2.3-3.7 0-6.3z"/></g><path class="o-line" d="M27.2 22l1.3 21.5M36.8 22l-1.3 21.5"/><rect class="o-g" x="22" y="43.5" width="20" height="5" rx="2"/><path class="o-o o-st" d="M26 48.5h12l-2.6 5.5h-6.8z"/><circle class="o-o" cx="32" cy="57.5" r="2.2"/></symbol>
+  <symbol id="il-moon" viewBox="0 0 64 64"><path class="o-o o-st" d="M30.49 11.01A21 21 0 1 0 49.23 40.45A17.5 17.5 0 0 1 30.49 11.01Z"/><use href="#star" x="43" y="6" width="17" height="17" class="o-b"/></symbol>
+  <symbol id="il-pen" viewBox="0 0 64 64"><g transform="rotate(-45 32 32)"><rect class="o-c o-st" x="5" y="25.5" width="9" height="13" rx="3"/><rect class="o-m o-st" x="12" y="25.5" width="5" height="13"/><rect class="o-k o-st" x="17" y="25.5" width="27" height="13"/><path class="o-p o-st" d="M44 25.5L58 32l-14 6.5z"/><path class="o-g" d="M53.2 29.8L58 32l-4.8 2.2z"/></g></symbol>
+  <symbol id="il-house" viewBox="0 0 64 64"><path class="o-p o-st" d="M14 28h36v26H14z"/><path class="o-c o-st" d="M8 30.5L32 10l24 20.5z"/><path class="o-g" d="M27 54V43a5 5 0 0 1 10 0v11z"/><rect class="o-k o-st" x="18.5" y="35" width="7" height="7" rx="1.5"/><rect class="o-k o-st" x="38.5" y="35" width="7" height="7" rx="1.5"/><path class="o-line" d="M6 54h52"/></symbol>
+  <symbol id="il-star" viewBox="0 0 64 64"><use href="#star" x="5" y="5" width="54" height="54" class="o-b o-st"/></symbol>
 </svg>
 
 <header class="top">
@@ -508,10 +633,10 @@ img,svg{max-width:100%}
       </div>
 
       <figure class="circle">
-        <svg class="deco" style="--c:var(--coral);--s:30px;--d:6s;top:0;left:4%" aria-hidden="true"><use href="#star"/></svg>
-        <svg class="deco" style="--c:var(--lilac);--s:20px;--d:7.5s;--dl:-3s;top:8%;right:3%" aria-hidden="true"><use href="#dia"/></svg>
-        <svg class="deco" style="--c:var(--sky);--s:26px;--d:6.5s;--dl:-1s;bottom:30%;left:0" aria-hidden="true"><use href="#ring"/></svg>
-        <svg class="deco" style="--c:var(--sun);--s:24px;--d:8s;--dl:-4s;bottom:26%;right:1%" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="obj" style="--s:64px;--k:22;--d:7s;top:-2%;left:2%" aria-hidden="true"><use href="#il-moon"/></svg>
+        <svg class="obj" style="--s:66px;--k:-18;--d:8s;--dl:-3s;top:2%;right:0" aria-hidden="true"><use href="#il-lantern"/></svg>
+        <svg class="obj" style="--s:76px;--k:16;--d:7.5s;--dl:-1s;bottom:27%;left:-2%" aria-hidden="true"><use href="#il-book"/></svg>
+        <svg class="obj" style="--s:60px;--k:-14;--d:6.5s;--dl:-4s;bottom:24%;right:-1%" aria-hidden="true"><use href="#il-pen"/></svg>
         <svg class="ring-art" viewBox="0 0 400 400" role="img" aria-labelledby="circle-title">
           <title id="circle-title">Знак HALAQA в кругу из двенадцати учеников</title>
           <circle class="disc" cx="200" cy="200" r="186"/>
@@ -591,13 +716,58 @@ img,svg{max-width:100%}
   </section>
 
   <section class="section bg-mint has-deco" id="about">
-    <svg class="deco hide-sm" style="--c:var(--sun);--s:22px;--d:7s;top:10%;right:7%" aria-hidden="true"><use href="#star"/></svg>
-    <svg class="deco hide-sm" style="--c:var(--lilac);--s:16px;--d:6s;--dl:-2s;top:24%;right:18%" aria-hidden="true"><use href="#dia"/></svg>
     <div class="wrap">
+      <div class="about-top">
       <div class="head">
         <p class="eyebrow" style="--e-bg:var(--teal-tint);--e-ink:var(--teal-ink)">О нас</p>
         <h2>Системные знания и чтение <span class="hl hl-teal">Корана</span> из дома</h2>
         <p>HALAQA — онлайн-уроки для детей <span class="nw">7–15 лет</span>. Учимся семестрами по три месяца, круглый год: в конце экзамен и переход на следующий уровень. Новый набор — каждый семестр.</p>
+      </div>
+        <svg class="desk" viewBox="0 0 400 260" role="img" aria-labelledby="desk-title">
+          <title id="desk-title">Урок из дома: ноутбук с онлайн-уроком, книги, фонарь и чай</title>
+          <circle cx="204" cy="134" r="118" fill="#FFFFFF" opacity=".72"/>
+          <use href="#star" x="352" y="94" width="24" height="24" class="o-s"/>
+          <use href="#dia" x="14" y="86" width="20" height="20" class="o-l"/>
+          <use href="#ring" x="368" y="150" width="20" height="20" style="color:var(--sky)"/>
+          <rect x="12" y="216" width="376" height="12" rx="6" class="o-g"/>
+          <rect x="104" y="62" width="196" height="134" rx="12" class="o-g"/>
+          <rect x="113" y="71" width="178" height="116" rx="6" class="o-w"/>
+          <rect x="119" y="77" width="106" height="66" rx="7" class="o-tt"/>
+          <use href="#il-book" x="146" y="84" width="52" height="52"/>
+          <rect x="231" y="77" width="54" height="31" rx="6" class="o-c"/>
+          <rect x="231" y="112" width="54" height="31" rx="6" class="o-k"/>
+          <rect x="119" y="149" width="37" height="32" rx="6" class="o-s"/>
+          <rect x="162" y="149" width="37" height="32" rx="6" class="o-l"/>
+          <rect x="205" y="149" width="37" height="32" rx="6" class="o-m"/>
+          <rect x="248" y="149" width="37" height="32" rx="6" class="o-t"/>
+          <g aria-hidden="true">
+            <text class="ar-t" x="258" y="99" text-anchor="middle">ا</text>
+            <text class="ar-t" x="258" y="131" text-anchor="middle">ب</text>
+            <text class="ar-t" x="137.5" y="170" text-anchor="middle">ت</text>
+            <text class="ar-t" x="180.5" y="169" text-anchor="middle">ن</text>
+            <text class="ar-t" x="223.5" y="166" text-anchor="middle">م</text>
+            <text class="ar-t" x="266.5" y="165" text-anchor="middle">ر</text>
+          </g>
+          <rect class="talk" x="119" y="77" width="106" height="66" rx="7"/>
+          <rect class="talk" style="--dl:-5.6s" x="231" y="77" width="54" height="31" rx="6"/>
+          <rect class="talk" style="--dl:-3.7s" x="162" y="149" width="37" height="32" rx="6"/>
+          <rect class="talk" style="--dl:-1.8s" x="248" y="149" width="37" height="32" rx="6"/>
+          <path d="M86 196h232l18 20H68z" class="o-gd"/>
+          <rect x="178" y="200" width="48" height="5" rx="2.5" class="o-m" opacity=".55"/>
+          <rect x="20" y="198" width="70" height="18" rx="3" class="o-c o-st"/>
+          <rect x="27" y="181" width="60" height="17" rx="3" class="o-k o-st"/>
+          <rect x="18" y="164" width="64" height="17" rx="3" class="o-s o-st"/>
+          <path d="M80 201v12M34 184v11M73 167v11" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+          <use href="#il-lantern" x="20" y="108" width="60" height="60"/>
+          <rect x="318" y="210" width="64" height="6" rx="3" class="o-g"/>
+          <path class="o-line" d="M372 189h3.5a7 7 0 0 1 0 14H371"/>
+          <path class="o-w o-st" d="M328 184h44v13a15 15 0 0 1-15 15h-14a15 15 0 0 1-15-15z"/>
+          <use href="#star" x="343" y="190" width="14" height="14" class="o-o"/>
+          <path class="steam" d="M342 176c-5-6 5-10 0-17"/>
+          <path class="steam" style="--dl:-1.6s" d="M357 176c-5-6 5-10 0-17"/>
+          <g class="bubble" style="--o:100% 100%"><path class="o-w o-st" d="M40 30h58a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10h-2l4 9-12-9H40a10 10 0 0 1-10-10V40a10 10 0 0 1 10-10z"/><circle class="o-t" cx="55" cy="47" r="3.6"/><circle class="o-t" cx="69" cy="47" r="3.6"/><circle class="o-t" cx="83" cy="47" r="3.6"/></g>
+          <g class="bubble" style="--dl:-3.7s;--o:0 100%"><path class="o-p o-st" d="M306 22h50a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10h-36l-8 9v-9h-6a10 10 0 0 1-10-10V32a10 10 0 0 1 10-10z"/><text class="q" x="331" y="47" text-anchor="middle">?</text></g>
+        </svg>
       </div>
       <div class="cards3">
         <div class="card" style="--t:var(--teal-tint);--b:var(--teal)">
@@ -629,23 +799,24 @@ img,svg{max-width:100%}
         <p>Каждый урок длится 45 минут и идёт по одному плану из семи шагов. Ребёнок знает, что будет дальше, а смена занятий помогает не уставать от экрана.</p>
       </div>
       <div class="tl-bar" aria-hidden="true">
-        <span style="--m:5;--i:0;--c:var(--teal)">1</span>
-        <span style="--m:3;--i:1;--c:var(--sky)">2</span>
-        <span style="--m:20;--i:2;--c:var(--green)">3</span>
-        <span style="--m:2;--i:3;--c:var(--coral)">4</span>
-        <span style="--m:10;--i:4;--c:var(--lilac)">5</span>
-        <span style="--m:3;--i:5;--c:var(--sun)">6</span>
-        <span style="--m:2;--i:6;--c:var(--mint-ink)">7</span>
+        <button type="button" tabindex="-1" data-step="0" style="--m:5;--i:0;--c:var(--teal)">1</button>
+        <button type="button" tabindex="-1" data-step="1" style="--m:3;--i:1;--c:var(--sky)">2</button>
+        <button type="button" tabindex="-1" data-step="2" style="--m:20;--i:2;--c:var(--green)">3</button>
+        <button type="button" tabindex="-1" data-step="3" style="--m:2;--i:3;--c:var(--coral)">4</button>
+        <button type="button" tabindex="-1" data-step="4" style="--m:10;--i:4;--c:var(--lilac)">5</button>
+        <button type="button" tabindex="-1" data-step="5" style="--m:3;--i:5;--c:var(--sun)">6</button>
+        <button type="button" tabindex="-1" data-step="6" style="--m:2;--i:6;--c:var(--mint-ink)">7</button>
       </div>
       <ol class="tl-legend">
-        <li style="--c:var(--teal)"><span><b>Повторение</b> 5 мин</span></li>
-        <li style="--c:var(--sky)"><span><b>Вступление</b> 3 мин</span></li>
-        <li style="--c:var(--green)"><span><b>Новая тема</b> 20 мин</span></li>
-        <li style="--c:var(--coral)"><span><b>Физминутка</b> 2 мин</span></li>
-        <li style="--c:var(--lilac)"><span><b>Закрепление</b> 10 мин</span></li>
-        <li style="--c:var(--sun)"><span><b>Рефлексия</b> 3 мин</span></li>
-        <li style="--c:var(--mint-ink)"><span><b>Домашнее задание</b> 2 мин</span></li>
+        <li style="--c:var(--teal)"><button type="button" data-step="0" aria-pressed="false" data-say="Вспоминаем, что прошли на прошлом уроке."><span><b>Повторение</b> 5 мин</span></button></li>
+        <li style="--c:var(--sky)"><button type="button" data-step="1" aria-pressed="false" data-say="Знакомимся с темой урока."><span><b>Вступление</b> 3 мин</span></button></li>
+        <li style="--c:var(--green)"><button type="button" data-step="2" aria-pressed="false" data-say="Устаз объясняет тему и обсуждает её с детьми: каждый может спросить и ответить."><span><b>Новая тема</b> 20 мин</span></button></li>
+        <li style="--c:var(--coral)"><button type="button" data-step="3" aria-pressed="false" data-say="Встаём, тянемся, разминаемся и даём отдых глазам."><span><b>Физминутка</b> 2 мин</span></button></li>
+        <li style="--c:var(--lilac)"><button type="button" data-step="4" aria-pressed="false" data-say="Задания и упражнения: викторины, сценки, чтение по цепочке."><span><b>Закрепление</b> 10 мин</span></button></li>
+        <li style="--c:var(--sun)"><button type="button" data-step="5" aria-pressed="false" data-say="«Светофор знаний»: ребёнок показывает, насколько понял тему."><span><b>Рефлексия</b> 3 мин</span></button></li>
+        <li style="--c:var(--mint-ink)"><button type="button" data-step="6" aria-pressed="false" data-say="Устаз объясняет, что сделать к следующему уроку."><span><b>Домашнее задание</b> 2 мин</span></button></li>
       </ol>
+      <p class="tl-say" aria-live="polite"><b data-say-h>Нажмите на шаг урока,</b> <span data-say-t>чтобы узнать, что в нём происходит.</span></p>
       <div class="lcards">
         <div class="lcard" style="--b:var(--teal);--t:var(--teal-tint)">
           <div class="lc-top"><span class="ico" style="--c:var(--teal);--c2:var(--sky)"><svg aria-hidden="true"><use href="#i-chat"/></svg></span><div><p class="when" style="--ci:var(--teal-ink)">Весь урок</p><h3>Формат диалога</h3></div></div>
@@ -659,10 +830,11 @@ img,svg{max-width:100%}
         <div class="lcard" style="--b:var(--sun);--t:var(--gold-tint)">
           <div class="lc-top"><span class="ico" style="--c:var(--lilac);--c2:var(--sky-ink)"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span><div><p class="when" style="--ci:var(--gold-ink)">В конце урока</p><h3>Светофор знаний</h3></div></div>
           <ul class="lights">
-            <li style="--c:var(--tl-green)">Зелёный — всё понятно</li>
-            <li style="--c:var(--tl-yellow);--dl:1.5s">Жёлтый — хочу повторить</li>
-            <li style="--c:var(--tl-red);--dl:3s">Красный — нужна помощь</li>
+            <li style="--c:var(--tl-green)"><button type="button" aria-pressed="false" data-say="Отлично! Тема понятна, можно идти дальше.">Зелёный — всё понятно</button></li>
+            <li style="--c:var(--tl-yellow);--dl:1.5s"><button type="button" aria-pressed="false" data-say="Хорошо, что сказал! Тему повторим: каждый урок начинается с повторения.">Жёлтый — хочу повторить</button></li>
+            <li style="--c:var(--tl-red);--dl:3s"><button type="button" aria-pressed="false" data-say="Не страшно! Устаз объяснит ещё раз и поможет разобраться.">Красный — нужна помощь</button></li>
           </ul>
+          <p class="light-say" aria-live="polite">Нажмите на цвет и узнайте, что будет дальше.</p>
           <p>Так устаз и родители видят, насколько хорошо ребёнок усвоил тему.</p>
         </div>
       </div>
@@ -861,6 +1033,46 @@ img,svg{max-width:100%}
     </div>
   </section>
 
+  <section class="section bg-gold has-deco" id="play">
+    <svg class="deco hide-sm" style="--c:var(--teal);--s:22px;--d:7s;top:9%;right:7%" aria-hidden="true"><use href="#star"/></svg>
+    <svg class="deco hide-sm" style="--c:var(--coral);--s:16px;--d:6s;--dl:-2s;top:20%;right:17%" aria-hidden="true"><use href="#dia"/></svg>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="--e-bg:var(--coral-tint);--e-ink:var(--coral-ink)">Поиграйте</p>
+        <h2>Мини-урок <span class="hl hl-gold">прямо здесь</span></h2>
+        <p>Две маленькие игры для знакомства с арабскими буквами и словами. Попробуйте вместе с ребёнком.</p>
+      </div>
+      <div class="play">
+        <div class="game" data-memo style="--b:var(--teal);--t:var(--teal-tint)">
+          <div class="game-top"><h3>Найди пару</h3><p class="game-stat">Ходов: <b data-moves>0</b> · пар: <b data-pairs>0</b> из 6</p></div>
+          <p class="game-hint">Открывайте по две карточки и ищите одинаковые буквы. Будьте внимательны: некоторые буквы отличаются только точками.</p>
+          <div class="memo-wrap">
+            <div class="memo-grid"></div>
+            <div class="memo-win" hidden>
+              <p class="win-stars" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></p>
+              <b>Отлично! Все пары найдены за <span data-total>0 ходов</span>.</b>
+              <p>На уроках дети узнают, как звучит каждая буква, и уже со 2-го урока читают слоги.</p>
+              <div class="actions"><button type="button" class="btn btn-ghost btn-sm" data-again>Сыграть ещё</button><a class="btn btn-primary btn-sm" data-link="zapis" href="https://t.me/halaqa_school">Записаться</a></div>
+            </div>
+          </div>
+          <button type="button" class="link-btn" data-again>Перемешать карточки</button>
+        </div>
+        <div class="game" style="--b:var(--sun);--t:var(--gold-tint)">
+          <div class="game-top"><h3>Первые слова</h3></div>
+          <p class="game-hint">Как вы думаете, что значит слово? Нажмите на карточку и проверьте себя.</p>
+          <ul class="words">
+            <li><button type="button" class="word" aria-pressed="false" style="--c:var(--teal);--t:var(--teal-tint);--ci:var(--teal-ink)"><span class="word-in"><span class="w-face w-front"><span class="w-ar" lang="ar" dir="rtl">كِتَاب</span><span class="w-tap">нажмите</span></span><span class="w-face w-back"><svg aria-hidden="true"><use href="#il-book"/></svg><span class="w-ru">книга</span><span class="w-tr">китаб</span></span></span></button></li>
+            <li><button type="button" class="word" aria-pressed="false" style="--c:var(--coral);--t:var(--coral-tint);--ci:var(--coral-ink)"><span class="word-in"><span class="w-face w-front"><span class="w-ar" lang="ar" dir="rtl">قَلَم</span><span class="w-tap">нажмите</span></span><span class="w-face w-back"><svg aria-hidden="true"><use href="#il-pen"/></svg><span class="w-ru">ручка</span><span class="w-tr">калам</span></span></span></button></li>
+            <li><button type="button" class="word" aria-pressed="false" style="--c:var(--sky);--t:var(--sky-tint);--ci:var(--sky-ink)"><span class="word-in"><span class="w-face w-front"><span class="w-ar" lang="ar" dir="rtl">بَيْت</span><span class="w-tap">нажмите</span></span><span class="w-face w-back"><svg aria-hidden="true"><use href="#il-house"/></svg><span class="w-ru">дом</span><span class="w-tr">байт</span></span></span></button></li>
+            <li><button type="button" class="word" aria-pressed="false" style="--c:var(--sun);--t:var(--gold-tint);--ci:var(--gold-ink)"><span class="word-in"><span class="w-face w-front"><span class="w-ar" lang="ar" dir="rtl">نُور</span><span class="w-tap">нажмите</span></span><span class="w-face w-back"><svg aria-hidden="true"><use href="#il-lantern"/></svg><span class="w-ru">свет</span><span class="w-tr">нур</span></span></span></button></li>
+            <li><button type="button" class="word" aria-pressed="false" style="--c:var(--lilac);--t:var(--lilac-tint);--ci:var(--lilac-ink)"><span class="word-in"><span class="w-face w-front"><span class="w-ar" lang="ar" dir="rtl">قَمَر</span><span class="w-tap">нажмите</span></span><span class="w-face w-back"><svg aria-hidden="true"><use href="#il-moon"/></svg><span class="w-ru">луна</span><span class="w-tr">камар</span></span></span></button></li>
+            <li><button type="button" class="word" aria-pressed="false" style="--c:var(--mint);--t:var(--mint-tint);--ci:var(--mint-ink)"><span class="word-in"><span class="w-face w-front"><span class="w-ar" lang="ar" dir="rtl">نَجْم</span><span class="w-tap">нажмите</span></span><span class="w-face w-back"><svg aria-hidden="true"><use href="#il-star"/></svg><span class="w-ru">звезда</span><span class="w-tr">наджм</span></span></span></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="groups has-deco" aria-labelledby="groups-title">
     <svg class="deco hide-sm" style="--c:var(--sun);--s:22px;--d:7s;top:14%;left:46%" aria-hidden="true"><use href="#star"/></svg>
     <svg class="deco hide-sm" style="--c:var(--coral);--s:16px;--d:6s;--dl:-3s;bottom:14%;left:40%" aria-hidden="true"><use href="#dia"/></svg>
@@ -873,6 +1085,29 @@ img,svg{max-width:100%}
       <div class="ages">
         <p class="age" style="--b:var(--coral);--t:var(--gold-tint);--t2:var(--coral-tint);--ci:var(--coral-ink);--ci2:var(--gold-ink)"><b>7–10</b><span class="age-u">лет</span><span class="age-name">Младшая группа</span><span class="age-levels"><span>Начинающие</span><span>Продолжающие</span></span></p>
         <p class="age" style="--b:var(--teal);--t:var(--teal-tint);--t2:var(--sky-tint);--ci:var(--teal-ink);--ci2:var(--sky-ink)"><b>11–15</b><span class="age-u">лет</span><span class="age-name">Старшая группа</span><span class="age-levels"><span>Начинающие</span><span>Продолжающие</span></span></p>
+      </div>
+      <div class="picker" data-picker>
+        <div class="pk-head"><span class="ico sm" style="--c:var(--sun);--c2:var(--coral)"><svg aria-hidden="true"><use href="#i-q"/></svg></span><h3>Подберите группу за 10 секунд</h3></div>
+        <div>
+          <p class="pk-label" id="pk-age">Сколько лет ребёнку?</p>
+          <div class="pk-ages" role="group" aria-labelledby="pk-age"><button type="button" class="pk-btn" data-age="7" aria-pressed="false">7</button><button type="button" class="pk-btn" data-age="8" aria-pressed="false">8</button><button type="button" class="pk-btn" data-age="9" aria-pressed="false">9</button><button type="button" class="pk-btn" data-age="10" aria-pressed="false">10</button><button type="button" class="pk-btn" data-age="11" aria-pressed="false">11</button><button type="button" class="pk-btn" data-age="12" aria-pressed="false">12</button><button type="button" class="pk-btn" data-age="13" aria-pressed="false">13</button><button type="button" class="pk-btn" data-age="14" aria-pressed="false">14</button><button type="button" class="pk-btn" data-age="15" aria-pressed="false">15</button></div>
+        </div>
+        <div>
+          <p class="pk-label" id="pk-lvl">Читает ли по-арабски?</p>
+          <div class="pk-opts" role="group" aria-labelledby="pk-lvl">
+            <button type="button" class="pk-btn" data-lvl="0" aria-pressed="false">Пока не знает букв</button>
+            <button type="button" class="pk-btn" data-lvl="1" aria-pressed="false">Знает некоторые буквы</button>
+            <button type="button" class="pk-btn" data-lvl="2" aria-pressed="false">Читает по слогам или бегло</button>
+          </div>
+        </div>
+        <div class="pk-out" aria-live="polite">
+          <p class="pk-wait">Выберите возраст и уровень — подскажем группу и подготовим сообщение для записи.</p>
+          <div class="pk-result" hidden>
+            <p>Скорее всего, подойдёт <b data-group></b>. Точный уровень уточним при записи.</p>
+            <p class="pk-msg"></p>
+            <div class="actions"><a class="btn btn-primary" data-send href="https://t.me/halaqa_school"><svg aria-hidden="true"><use href="#tg"/></svg>Написать нам</a><button type="button" class="btn btn-ghost" data-copy>Скопировать текст</button></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1002,6 +1237,7 @@ img,svg{max-width:100%}
     <div class="foot-card dark-card">
       <svg class="deco" style="--c:var(--sun);--s:20px;--d:6s;bottom:16%;right:36%" aria-hidden="true"><use href="#star"/></svg>
       <svg class="deco hide-sm" style="--c:var(--teal);--s:16px;--d:7s;--dl:-2s;top:16%;right:28%" aria-hidden="true"><use href="#ring"/></svg>
+      <span class="hang" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#il-lantern"/></svg></span>
       <div>
         <p class="ar-salam" lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
         <h2>Остались вопросы?</h2>
@@ -1055,14 +1291,186 @@ img,svg{max-width:100%}
   const phase = forced ? forced[1] : PHASES.find(([, until]) => !until || now < Date.parse(until))[0];
   document.querySelectorAll('[data-phase]').forEach((el) => { el.hidden = !el.dataset.phase.split(' ').includes(phase); });
 
-  // Тень у шапки, когда страницу прокрутили.
+  // Тень у шапки, когда страницу прокрутили, и полоска прогресса под ней.
   const top = document.querySelector('.top');
-  const onScroll = () => top.classList.toggle('scrolled', scrollY > 8);
+  const onScroll = () => {
+    top.classList.toggle('scrolled', scrollY > 8);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    top.style.setProperty('--p', max > 0 ? Math.min(scrollY / max, 1).toFixed(4) : 0);
+  };
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const plural = (n, one, few, many) => {
+    const t = n % 10, h = n % 100;
+    return t === 1 && h !== 11 ? one : t >= 2 && t <= 4 && (h < 12 || h > 14) ? few : many;
+  };
+
+  // Предметы вокруг круга чуть сдвигаются вслед за мышью.
+  const hero = document.querySelector('.hero');
+  if (!reduced && matchMedia('(hover: hover)').matches) hero.addEventListener('pointermove', (e) => {
+    const r = hero.getBoundingClientRect();
+    hero.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+    hero.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+  });
+
+  // Шаги урока: по нажатию на полоску или подпись показываем, что происходит на шаге.
+  const say = document.querySelector('.tl-say');
+  const steps = document.querySelectorAll('[data-step]');
+  steps.forEach((b) => b.addEventListener('click', () => {
+    const i = b.dataset.step;
+    const item = document.querySelector(`.tl-legend [data-step="${i}"]`);
+    steps.forEach((x) => {
+      x.classList.toggle('on', x.dataset.step === i);
+      if (x.hasAttribute('aria-pressed')) x.setAttribute('aria-pressed', x.dataset.step === i);
+    });
+    say.style.setProperty('--c', item.parentElement.style.getPropertyValue('--c'));
+    say.querySelector('[data-say-h]').textContent = `${+i + 1}. ${item.textContent.trim()}.`;
+    say.querySelector('[data-say-t]').textContent = item.dataset.say;
+    say.classList.remove('swap');
+    void say.offsetWidth;
+    say.classList.add('swap');
+  }));
+
+  // Светофор знаний: выбранный цвет горит, остальные гаснут.
+  const lights = document.querySelector('.lights');
+  const lightSay = document.querySelector('.light-say');
+  lights.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => {
+    lights.classList.add('chosen');
+    lights.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    lightSay.textContent = b.dataset.say;
+  }));
+
+  // Блёстки-ромбики, когда пара найдена.
+  const burst = (host, el) => {
+    if (reduced) return;
+    const r = el.getBoundingClientRect(), h = host.getBoundingClientRect();
+    const colors = ['--teal', '--sun', '--coral', '--sky', '--lilac', '--gold'];
+    for (let i = 0; i < 12; i++) {
+      const a = (i / 12) * Math.PI * 2 + Math.random() * 0.5, d = 38 + Math.random() * 30;
+      const spark = document.createElement('i');
+      spark.className = 'spark';
+      spark.style.cssText = `left:${r.left - h.left + r.width / 2}px;top:${r.top - h.top + r.height / 2}px;` +
+        `--x:${(Math.cos(a) * d).toFixed(1)}px;--y:${(Math.sin(a) * d).toFixed(1)}px;--c:var(${colors[i % 6]})`;
+      host.append(spark);
+      setTimeout(() => spark.remove(), 900);
+    }
+  };
+
+  // «Найди пару»: 6 пар букв. Берём буквы, которые отличаются только точками, чтобы было интереснее.
+  const memo = document.querySelector('[data-memo]');
+  const FAMILIES = ['بتثني', 'جحخ', 'دذ', 'رز', 'سش', 'صض', 'طظ', 'عغ', 'فق'];
+  const shuffle = (a) => {
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  };
+  const grid = memo.querySelector('.memo-grid'), win = memo.querySelector('.memo-win');
+  let opened = [], moves = 0, pairs = 0, lock = false;
+  const count = () => {
+    memo.querySelector('[data-moves]').textContent = moves;
+    memo.querySelector('[data-pairs]').textContent = pairs;
+  };
+  const deal = () => {
+    const letters = shuffle([...FAMILIES]).slice(0, 3).flatMap((f) => shuffle([...f]).slice(0, 2));
+    grid.replaceChildren(...shuffle([...letters, ...letters]).map((ch, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'memo';
+      b.dataset.ch = ch;
+      b.dataset.n = i + 1;
+      b.setAttribute('aria-label', `Карточка ${i + 1}, закрыта`);
+      b.innerHTML = '<span class="memo-in"><span class="memo-face memo-back"><svg aria-hidden="true"><use href="#star"/></svg></span>' +
+        `<span class="memo-face memo-front" lang="ar">${ch}</span></span>`;
+      return b;
+    }));
+    opened = []; moves = 0; pairs = 0; lock = false;
+    win.hidden = true;
+    win.parentElement.classList.remove('won');
+    count();
+  };
+  const finish = () => {
+    const stars = moves <= 9 ? 3 : moves <= 13 ? 2 : 1;
+    win.querySelectorAll('.win-stars svg').forEach((svg, i) => svg.classList.toggle('on', i < stars));
+    win.querySelector('[data-total]').textContent = `${moves} ${plural(moves, 'ход', 'хода', 'ходов')}`;
+    setTimeout(() => {
+      win.parentElement.classList.add('won');
+      win.hidden = false;
+      win.querySelector('[data-again]').focus({ preventScroll: true });
+    }, 500);
+  };
+  grid.addEventListener('click', (e) => {
+    const b = e.target.closest('.memo');
+    if (!b || lock || b.classList.contains('open') || b.classList.contains('done')) return;
+    b.classList.add('open');
+    b.setAttribute('aria-label', `Карточка ${b.dataset.n}: буква ${b.dataset.ch}`);
+    opened.push(b);
+    if (opened.length < 2) return;
+    const [a, c] = opened;
+    opened = [];
+    moves++;
+    lock = true;
+    count();
+    if (a.dataset.ch === c.dataset.ch) {
+      setTimeout(() => {
+        a.classList.add('done');
+        c.classList.add('done');
+        pairs++;
+        count();
+        burst(memo.querySelector('.memo-wrap'), c);
+        lock = false;
+        if (pairs === 6) finish();
+      }, 450);
+    } else {
+      setTimeout(() => { a.classList.add('miss'); c.classList.add('miss'); }, 600);
+      setTimeout(() => {
+        [a, c].forEach((x) => { x.classList.remove('open', 'miss'); x.setAttribute('aria-label', `Карточка ${x.dataset.n}, закрыта`); });
+        lock = false;
+      }, 1200);
+    }
+  });
+  memo.querySelectorAll('[data-again]').forEach((b) => b.addEventListener('click', deal));
+  deal();
+
+  // «Первые слова»: карточка переворачивается по нажатию.
+  document.querySelectorAll('.word').forEach((w) => w.addEventListener('click', () => {
+    w.setAttribute('aria-pressed', w.getAttribute('aria-pressed') !== 'true');
+  }));
+
+  // Подбор группы: возраст и уровень чтения → группа и готовое сообщение для Telegram.
+  // На сайте ничего не сохраняется и никуда не отправляется: текст просто подставляется в чат.
+  const picker = document.querySelector('[data-picker]');
+  const LEVELS = ['пока не знает букв', 'знает некоторые буквы', 'читает по слогам или бегло'];
+  const result = picker.querySelector('.pk-result'), msg = picker.querySelector('.pk-msg');
+  const send = picker.querySelector('[data-send]'), copyBtn = picker.querySelector('[data-copy]');
+  const ageCards = document.querySelectorAll('.age');
+  let age = 0, lvl = -1, text = '';
+  const pick = () => {
+    picker.querySelectorAll('[data-age]').forEach((b) => b.setAttribute('aria-pressed', +b.dataset.age === age));
+    picker.querySelectorAll('[data-lvl]').forEach((b) => b.setAttribute('aria-pressed', +b.dataset.lvl === lvl));
+    ageCards.forEach((el, i) => el.classList.toggle('picked', age > 0 && (age <= 10 ? 0 : 1) === i));
+    if (!age || lvl < 0) return;
+    const group = age <= 10 ? 'младшая группа, 7–10 лет' : 'старшая группа, 11–15 лет';
+    picker.querySelector('[data-group]').textContent = `${group}, «${lvl < 2 ? 'Начинающие' : 'Продолжающие'}»`;
+    text = `Ассаламу алейкум! Хочу записать ребёнка в HALAQA.\nВозраст: ${age} ${plural(age, 'год', 'года', 'лет')}.\nАрабский: ${LEVELS[lvl]}.\nГород: `;
+    msg.textContent = text;
+    send.href = `${LINKS.zapis}?text=${encodeURIComponent(text)}`;
+    picker.querySelector('.pk-wait').hidden = true;
+    result.hidden = false;
+  };
+  picker.querySelectorAll('[data-age]').forEach((b) => b.addEventListener('click', () => { age = +b.dataset.age; pick(); }));
+  picker.querySelectorAll('[data-lvl]').forEach((b) => b.addEventListener('click', () => { lvl = +b.dataset.lvl; pick(); }));
+  const copy = () => (navigator.clipboard ? navigator.clipboard.writeText(text).then(() => true, () => false) : Promise.resolve(false));
+  copyBtn.addEventListener('click', () => copy().then((ok) => {
+    copyBtn.textContent = ok ? 'Скопировано' : 'Выделите текст и скопируйте';
+    if (!ok) getSelection().selectAllChildren(msg);
+    setTimeout(() => { copyBtn.textContent = 'Скопировать текст'; }, 2500);
+  }));
+  // Если Telegram не подставит текст сам, он уже в буфере обмена — останется вставить.
+  send.addEventListener('click', copy);
+
   // Появление блоков при прокрутке. Блоки первого экрана видны сразу.
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  if (reduced || !('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver((entries) => entries.forEach((e) => {
     if (!e.isIntersecting) return;
     const el = e.target;
@@ -1076,9 +1484,9 @@ img,svg{max-width:100%}
     if (i) el.style.transitionDelay = Math.min(i, 6) * 90 + 'ms';
     io.observe(el);
   };
-  document.querySelectorAll('.section .head, .tl-bar, .tl-legend, .sub-h, .prog-note, .groups-text, .price-note, .opt-card, .join-cta, .foot-card')
+  document.querySelectorAll('.section .head, .desk, .tl-bar, .tl-legend, .tl-say, .sub-h, .prog-note, .groups-text, .picker, .price-note, .opt-card, .join-cta, .foot-card')
     .forEach((el) => reveal(el));
-  document.querySelectorAll('.cards3, .lcards, .teachers, .week, .months, .levels, .ages, .prices, .steps, .faq')
+  document.querySelectorAll('.cards3, .lcards, .teachers, .week, .months, .levels, .play, .ages, .prices, .steps, .faq')
     .forEach((group) => [...group.children].filter((el) => !el.hidden).forEach((el, i) => reveal(el, i)));
 })();
 </script>
